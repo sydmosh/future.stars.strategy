@@ -34,12 +34,18 @@
     "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.6.0",
     "uuid": "^14.0.1",
+    "vite": "^8.1.4",
     "zustand": "^4.5.7"
   },
   "devDependencies": {
     "@types/uuid": "^10.0.0"
   },
-  "keywords": ["mosh-books", "books", "reading", "lesotho"],
+  "keywords": [
+    "mosh-books",
+    "books",
+    "reading",
+    "lesotho"
+  ],
   "author": "Moshoeshoe Koali",
   "license": "MIT"
 }
