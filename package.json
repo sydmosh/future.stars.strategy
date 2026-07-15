@@ -1,0 +1,12 @@
+{
+  "name": "future-stars-proposal",
+  "version": "1.0.0",
+  "description": "Future Stars Academy — Investment-Grade Business Proposal",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": ["future-stars", "academy", "proposal", "lesotho", "education"],
+  "author": "Moshoeshoe Koali",
+  "license": "MIT"
+}
