@@ -1,26 +1,111 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    @apply bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-50;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  ::selection {
+    @apply bg-blue-200 dark:bg-blue-800;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .reading-content {
+    @apply leading-relaxed text-slate-700 dark:text-slate-300;
+  }
+
+  .reading-content h1 {
+    @apply text-3xl font-bold mt-12 mb-6 text-slate-900 dark:text-white;
+  }
+
+  .reading-content h2 {
+    @apply text-2xl font-semibold mt-10 mb-5 text-slate-900 dark:text-white;
+  }
+
+  .reading-content h3 {
+    @apply text-xl font-semibold mt-8 mb-4 text-slate-900 dark:text-white;
+  }
+
+  .reading-content p {
+    @apply mb-5 leading-[1.8];
+  }
+
+  .reading-content blockquote {
+    @apply border-l-4 border-blue-500 pl-6 my-6 italic text-slate-600 dark:text-slate-400;
+  }
+
+  .reading-content ul {
+    @apply list-disc pl-6 mb-5 space-y-2;
+  }
+
+  .reading-content ol {
+    @apply list-decimal pl-6 mb-5 space-y-2;
+  }
+
+  .reading-content li {
+    @apply leading-relaxed;
+  }
+
+  .reading-content a {
+    @apply text-blue-600 underline underline-offset-2 hover:text-blue-700 dark:text-blue-400;
+  }
+
+  .reading-content code {
+    @apply bg-slate-100 dark:bg-slate-800 rounded-lg px-2 py-1 text-sm font-mono;
+  }
+
+  .reading-content pre {
+    @apply bg-slate-100 dark:bg-slate-800 rounded-2xl p-5 my-6 overflow-x-auto;
+  }
+
+  .reading-content pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .reading-content img {
+    @apply rounded-2xl my-8 w-full;
+  }
+
+  .reading-content table {
+    @apply w-full border-collapse my-6;
+  }
+
+  .reading-content th {
+    @apply border border-slate-200 dark:border-slate-700 px-4 py-3 bg-slate-50 dark:bg-slate-800 font-semibold text-left;
+  }
+
+  .reading-content td {
+    @apply border border-slate-200 dark:border-slate-700 px-4 py-3;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
 }
