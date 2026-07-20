@@ -1,27 +1,765 @@
 import type { Book, Chapter } from '@/types';
 
-export const STATIC_BOOK: Book = {
-  id: 'the-mystery-of-god',
-  title: 'The Mystery Of God',
-  subtitle: 'Understanding Humanity in Christ Before Adam',
-  slug: 'the-mystery-of-god',
-  description: 'Before Adam was formed from dust, God already had a complete and perfect vision of humanity. That vision was not abstract — it was personal, living, and fully expressed in Christ. This book explores the profound truth that humanity did not originate in Adam\'s mind, history, or biology, but in divine intention. Adam is not the starting point of humanity\'s meaning — Christ is.',
-  coverImage: '/images/mystery-of-god-cover.png',
-  author: 'Moshoeshoe Koali',
-  category: 'Christian',
-  featured: true,
-  published: true,
-  tags: ['theology', 'christ', 'adam', 'humanity', 'salvation', 'eternal-purpose'],
-  language: 'English',
-  readingTime: 0,
-  createdAt: new Date('2026-01-01'),
-  updatedAt: new Date('2026-07-15'),
-  views: 0,
-  averageRating: 0,
-  totalReviews: 0,
-};
+export const STATIC_BOOKS: Book[] = [
+  {
+    id: 'the-mystery-of-god',
+    title: 'The Mystery Of God',
+    subtitle: 'Understanding Humanity in Christ Before Adam',
+    slug: 'the-mystery-of-god',
+    description: 'Before Adam was formed from dust, God already had a complete and perfect vision of humanity. That vision was not abstract — it was personal, living, and fully expressed in Christ. This book explores the profound truth that humanity did not originate in Adam\'s mind, history, or biology, but in divine intention. Adam is not the starting point of humanity\'s meaning — Christ is.',
+    coverImage: '/images/mystery-of-god-cover.png',
+    author: 'Moshoeshoe Koali',
+    category: 'Christian',
+    featured: true,
+    published: true,
+    tags: ['theology', 'christ', 'adam', 'humanity', 'salvation', 'eternal-purpose'],
+    language: 'English',
+    readingTime: 0,
+    createdAt: new Date('2026-01-01'),
+    updatedAt: new Date('2026-07-15'),
+    views: 0,
+    averageRating: 0,
+    totalReviews: 0,
+  },
+  {
+    id: 'lgcse-maths-workbook',
+    title: 'LGCSE Mathematics Workbook',
+    subtitle: 'Comprehensive Exam Preparation Guide',
+    slug: 'lgcse-maths-workbook',
+    description: 'A comprehensive mathematics workbook designed for LGCSE examination preparation. Covers all key topics including Number and Numeration, Algebra, Geometry, Statistics, Trigonometry, and more. Each chapter includes worked examples, practice exercises, and exam-style questions with step-by-step solutions. Written specifically for the LGCSE curriculum to help students build confidence and master essential mathematical concepts.',
+    coverImage: '',
+    author: 'Moshoeshoe Koali',
+    category: 'Education',
+    featured: true,
+    published: true,
+    tags: ['mathematics', 'lgcse', 'exam-preparation', 'workbook', 'study-guide', 'revision'],
+    language: 'English',
+    readingTime: 0,
+    createdAt: new Date('2026-06-01'),
+    updatedAt: new Date('2026-07-20'),
+    views: 0,
+    averageRating: 0,
+    totalReviews: 0,
+  },
+];
 
-export const STATIC_CHAPTERS: Chapter[] = [
+const MATH_CHAPTERS: Chapter[] = [
+  {
+    id: 'math-ch-1',
+    bookId: 'lgcse-maths-workbook',
+    title: 'Number and Numeration',
+    slug: 'number-and-numeration',
+    chapterNumber: 1,
+    content: `<h1>CHAPTER 1: Number and Numeration</h1>
+
+<blockquote>
+  <strong>Chapter Objectives:</strong><br />
+  By the end of this chapter, you should be able to work confidently with natural numbers, integers, fractions, decimals, percentages, ratios, and significant figures.
+</blockquote>
+
+<h2>1.1 Types of Numbers</h2>
+
+<p>Understanding the different types of numbers is essential for all mathematics.</p>
+
+<h3>Natural Numbers (ℕ)</h3>
+<p>Natural numbers are counting numbers: 1, 2, 3, 4, 5, ...</p>
+
+<h3>Integers (ℤ)</h3>
+<p>Integers include positive and negative whole numbers and zero: ..., -3, -2, -1, 0, 1, 2, 3, ...</p>
+
+<h3>Rational Numbers (ℚ)</h3>
+<p>Numbers that can be expressed as fractions <math><mfrac><mi>p</mi><mi>q</mi></mfrac></math> where p and q are integers and q ≠ 0.</p>
+<p>Examples: <math><mfrac><mn>1</mn><mn>2</mn></mfrac></math>, 0.75, -3, <math><mfrac><mn>22</mn><mn>7</mn></mfrac></math></p>
+
+<h3>Irrational Numbers</h3>
+<p>Numbers that cannot be expressed as a simple fraction. Their decimal expansions neither terminate nor repeat.</p>
+<p>Examples: π, √2, √3</p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 1.1</h4>
+<p class="text-blue-700 dark:text-blue-300">Classify each number as natural, integer, rational, or irrational:</p>
+<p class="font-mono text-blue-700 dark:text-blue-300">a) 7 &nbsp;&nbsp; b) -4 &nbsp;&nbsp; c) 0.333... &nbsp;&nbsp; d) π</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>a) 7 → Natural, Integer, Rational<br />
+b) -4 → Integer, Rational<br />
+c) 0.333... → Rational (equals <math><mfrac><mn>1</mn><mn>3</mn></mfrac></math>)<br />
+d) π → Irrational</p>
+</div>
+
+<h2>1.2 Operations with Integers</h2>
+
+<h3>Addition and Subtraction</h3>
+<p>Rules for adding and subtracting integers:</p>
+<ul>
+  <li>Same signs → Add and keep the sign</li>
+  <li>Different signs → Subtract and keep the sign of the larger number</li>
+  <li>Subtracting a negative → Add the positive equivalent</li>
+</ul>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 1.2</h4>
+<p class="text-blue-700 dark:text-blue-300">Simplify:</p>
+<p class="font-mono text-blue-700 dark:text-blue-300">a) -5 + 8 &nbsp;&nbsp; b) -3 - 7 &nbsp;&nbsp; c) 4 - (-9) &nbsp;&nbsp; d) -6 + (-2)</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>a) -5 + 8 = 3<br />
+b) -3 - 7 = -10<br />
+c) 4 - (-9) = 4 + 9 = 13<br />
+d) -6 + (-2) = -8</p>
+</div>
+
+<h3>Multiplication and Division</h3>
+<p>Rules for multiplying and dividing integers:</p>
+<ul>
+  <li>Positive × Positive = Positive</li>
+  <li>Negative × Negative = Positive</li>
+  <li>Positive × Negative = Negative</li>
+  <li>Negative × Positive = Negative</li>
+  <li>Same rules apply for division</li>
+</ul>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 1.3</h4>
+<p class="text-blue-700 dark:text-blue-300">Calculate:</p>
+<p class="font-mono text-blue-700 dark:text-blue-300">a) (-4) × 6 &nbsp;&nbsp; b) (-15) ÷ (-3) &nbsp;&nbsp; c) (-7) × (-8) &nbsp;&nbsp; d) 24 ÷ (-6)</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>a) (-4) × 6 = -24<br />
+b) (-15) ÷ (-3) = 5<br />
+c) (-7) × (-8) = 56<br />
+d) 24 ÷ (-6) = -4</p>
+</div>
+
+<h2>1.3 Fractions</h2>
+
+<h3>Adding and Subtracting Fractions</h3>
+<p>To add or subtract fractions, find a common denominator first.</p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 1.4</h4>
+<p class="text-blue-700 dark:text-blue-300">Simplify: <math><mfrac><mn>2</mn><mn>3</mn></mfrac><mo>+</mo><mfrac><mn>3</mn><mn>4</mn></mfrac></math></p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>LCM of 3 and 4 is 12</p>
+<p><math><mfrac><mn>2</mn><mn>3</mn></mfrac><mo>+</mo><mfrac><mn>3</mn><mn>4</mn></mfrac><mo>=</mo><mfrac><mrow><mn>2</mn><mo>×</mo><mn>4</mn></mrow><mn>12</mn></mfrac><mo>+</mo><mfrac><mrow><mn>3</mn><mo>×</mo><mn>3</mn></mrow><mn>12</mn></mfrac><mo>=</mo><mfrac><mn>8</mn><mn>12</mn></mfrac><mo>+</mo><mfrac><mn>9</mn><mn>12</mn></mfrac><mo>=</mo><mfrac><mn>17</mn><mn>12</mn></mfrac></math></p>
+<p>Answer: <math><mfrac><mn>17</mn><mn>12</mn></mfrac></math> or <math><mn>1</mn><mfrac><mn>5</mn><mn>12</mn></mfrac></math></p>
+</div>
+
+<h3>Multiplying Fractions</h3>
+<p>Multiply numerators together and denominators together:</p>
+<p><math><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>×</mo><mfrac><mi>c</mi><mi>d</mi></mfrac><mo>=</mo><mfrac><mrow><mi>a</mi><mo>×</mo><mi>c</mi></mrow><mrow><mi>b</mi><mo>×</mo><mi>d</mi></mrow></mfrac></math></p>
+
+<h3>Dividing Fractions</h3>
+<p>To divide by a fraction, multiply by its reciprocal:</p>
+<p><math><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>÷</mo><mfrac><mi>c</mi><mi>d</mi></mfrac><mo>=</mo><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>×</mo><mfrac><mi>d</mi><mi>c</mi></mfrac></math></p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 1.5</h4>
+<p class="text-blue-700 dark:text-blue-300">Simplify: <math><mfrac><mn>2</mn><mn>5</mn></mfrac><mo>÷</mo><mfrac><mn>3</mn><mn>7</mn></mfrac></math></p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p><math><mfrac><mn>2</mn><mn>5</mn></mfrac><mo>÷</mo><mfrac><mn>3</mn><mn>7</mn></mfrac><mo>=</mo><mfrac><mn>2</mn><mn>5</mn></mfrac><mo>×</mo><mfrac><mn>7</mn><mn>3</mn></mfrac><mo>=</mo><mfrac><mn>14</mn><mn>15</mn></mfrac></math></p>
+</div>
+
+<h2>1.4 Decimals and Percentages</h2>
+
+<h3>Converting Between Fractions, Decimals, and Percentages</h3>
+<ul>
+  <li>Fraction → Decimal: Divide numerator by denominator</li>
+  <li>Decimal → Percentage: Multiply by 100</li>
+  <li>Percentage → Decimal: Divide by 100</li>
+  <li>Percentage → Fraction: Write over 100 and simplify</li>
+</ul>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 1.6</h4>
+<p class="text-blue-700 dark:text-blue-300">Convert <math><mfrac><mn>3</mn><mn>8</mn></mfrac></math> to a decimal and a percentage.</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>Decimal: 3 ÷ 8 = 0.375</p>
+<p>Percentage: 0.375 × 100 = 37.5%</p>
+</div>
+
+<h2>1.5 Ratio and Proportion</h2>
+
+<p>A ratio compares two quantities. A proportion states that two ratios are equal.</p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 1.7</h4>
+<p class="text-blue-700 dark:text-blue-300">Divide 120 in the ratio 2 : 3 : 5</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>Total parts = 2 + 3 + 5 = 10</p>
+<p>Value of 1 part = 120 ÷ 10 = 12</p>
+<p>Part 1: 2 × 12 = 24</p>
+<p>Part 2: 3 × 12 = 36</p>
+<p>Part 3: 5 × 12 = 60</p>
+<p>Check: 24 + 36 + 60 = 120 ✓</p>
+</div>
+
+<h2>1.6 Significant Figures and Decimal Places</h2>
+
+<h3>Significant Figures</h3>
+<p>Rules for significant figures:</p>
+<ul>
+  <li>All non-zero digits are significant</li>
+  <li>Zeros between non-zero digits are significant</li>
+  <li>Leading zeros are not significant</li>
+  <li>Trailing zeros after decimal point are significant</li>
+</ul>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 1.8</h4>
+<p class="text-blue-700 dark:text-blue-300">Round 23,456 to:</p>
+<p class="text-blue-700 dark:text-blue-300">a) 3 significant figures &nbsp;&nbsp; b) 2 significant figures</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>a) 23,456 ≈ 23,500 (3 s.f.)</p>
+<p>b) 23,456 ≈ 23,000 (2 s.f.)</p>
+</div>
+
+<h2>Practice Exercises</h2>
+
+<div class="rounded-xl border-2 border-green-200 bg-green-50 p-6 my-6 dark:border-green-800 dark:bg-green-900/20">
+<h4 class="font-semibold text-green-800 dark:text-green-200 mb-3">Exercise 1</h4>
+<ol class="space-y-2 text-green-700 dark:text-green-300">
+  <li>1. Simplify: -8 + 12 - (-5) + (-3)</li>
+  <li>2. Calculate: (-12) × (-4) ÷ (-6)</li>
+  <li>3. Simplify: <math><mfrac><mn>3</mn><mn>5</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>−</mo><mfrac><mn>2</mn><mn>3</mn></mfrac></math></li>
+  <li>4. Convert 0.625 to a fraction in simplest form</li>
+  <li>5. Express 40 as a percentage of 160</li>
+  <li>6. Divide 84 in the ratio 5 : 7</li>
+  <li>7. Round 3.14159 to 3 decimal places</li>
+  <li>8. Round 0.004567 to 2 significant figures</li>
+  <li>9. A map has a scale of 1 : 50,000. What distance (in km) is represented by 8 cm on the map?</li>
+  <li>10. If 5 workers can build a wall in 12 days, how long will it take 8 workers to build the same wall?</li>
+</ol>
+</div>
+
+<blockquote class="border-l-4 border-green-500 bg-green-50 p-4 my-6 dark:border-green-400 dark:bg-green-900/30">
+  <p class="font-semibold text-green-800 dark:text-green-200">Key Points to Remember:</p>
+  <ul class="text-green-700 dark:text-green-300 text-sm mt-2">
+    <li>✓ When adding/subtracting integers, think of a number line</li>
+    <li>✓ Always simplify fractions to their lowest terms</li>
+    <li>✓ Check your answers by doing the reverse operation</li>
+    <li>✓ Read ratio questions carefully — order matters</li>
+  </ul>
+</blockquote>`,
+    estimatedReadingTime: 25,
+    createdAt: new Date('2026-06-01'),
+  },
+  {
+    id: 'math-ch-2',
+    bookId: 'lgcse-maths-workbook',
+    title: 'Algebra',
+    slug: 'algebra',
+    chapterNumber: 2,
+    content: `<h1>CHAPTER 2: Algebra</h1>
+
+<blockquote>
+  <strong>Chapter Objectives:</strong><br />
+  By the end of this chapter, you should be able to simplify algebraic expressions, solve linear and quadratic equations, work with inequalities, and understand algebraic fractions.
+</blockquote>
+
+<h2>2.1 Algebraic Notation and Simplification</h2>
+
+<p>Algebra uses letters to represent unknown numbers. Key rules:</p>
+<ul>
+  <li>Like terms can be added or subtracted</li>
+  <li><math><mi>a</mi><mo>×</mo><mi>b</mi></math> is written as <math><mi>ab</mi></math></li>
+  <li><math><mi>a</mi><mo>÷</mo><mi>b</mi></math> is written as <math><mfrac><mi>a</mi><mi>b</mi></mfrac></math></li>
+</ul>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 2.1</h4>
+<p class="text-blue-700 dark:text-blue-300">Simplify: 3x + 2y - x + 5y</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>3x - x = 2x</p>
+<p>2y + 5y = 7y</p>
+<p>Answer: 2x + 7y</p>
+</div>
+
+<h2>2.2 Expanding Brackets</h2>
+
+<p>To expand brackets, multiply each term inside the bracket by the term outside:</p>
+<p><math><mi>a</mi><mo>(</mo><mi>b</mi><mo>+</mo><mi>c</mi><mo>)</mo><mo>=</mo><mi>ab</mi><mo>+</mo><mi>ac</mi></math></p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 2.2</h4>
+<p class="text-blue-700 dark:text-blue-300">Expand: 3(2x - 5)</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>3(2x - 5) = 3(2x) - 3(5) = 6x - 15</p>
+</div>
+
+<h3>Expanding Double Brackets (FOIL Method)</h3>
+<p><math><mo>(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo>)</mo><mo>(</mo><mi>c</mi><mo>+</mo><mi>d</mi><mo>)</mo><mo>=</mo><mi>ac</mi><mo>+</mo><mi>ad</mi><mo>+</mo><mi>bc</mi><mo>+</mo><mi>bd</mi></math></p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 2.3</h4>
+<p class="text-blue-700 dark:text-blue-300">Expand: (x + 3)(x - 4)</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>(x + 3)(x - 4) = x² - 4x + 3x - 12 = x² - x - 12</p>
+</div>
+
+<h2>2.3 Factorisation</h2>
+
+<p>Factorisation is the reverse of expanding brackets. Look for common factors first.</p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 2.4</h4>
+<p class="text-blue-700 dark:text-blue-300">Factorise: 6x² + 9x</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>Common factor: 3x</p>
+<p>6x² + 9x = 3x(2x + 3)</p>
+</div>
+
+<h3>Factorising Quadratics</h3>
+<p>For <math><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>bx</mi><mo>+</mo><mi>c</mi></math>, find two numbers that multiply to give c and add to give b.</p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 2.5</h4>
+<p class="text-blue-700 dark:text-blue-300">Factorise: x² + 5x + 6</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>Find two numbers that multiply to 6 and add to 5: 2 and 3</p>
+<p>x² + 5x + 6 = (x + 2)(x + 3)</p>
+</div>
+
+<h2>2.4 Solving Linear Equations</h2>
+
+<p>To solve a linear equation, isolate the variable on one side.</p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 2.6</h4>
+<p class="text-blue-700 dark:text-blue-300">Solve: 4x - 7 = 2x + 9</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>4x - 2x = 9 + 7</p>
+<p>2x = 16</p>
+<p>x = 8</p>
+<p>Check: 4(8) - 7 = 32 - 7 = 25, 2(8) + 9 = 16 + 9 = 25 ✓</p>
+</div>
+
+<h2>2.5 Solving Quadratic Equations</h2>
+
+<h3>By Factorisation</h3>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 2.7</h4>
+<p class="text-blue-700 dark:text-blue-300">Solve: x² - 3x - 10 = 0</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>x² - 3x - 10 = (x - 5)(x + 2) = 0</p>
+<p>Either x - 5 = 0 or x + 2 = 0</p>
+<p>x = 5 or x = -2</p>
+</div>
+
+<h3>Using the Quadratic Formula</h3>
+<p>When factorisation is not possible:</p>
+<p><math><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>ac</mi></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></math> for <math><msup><mi>ax</mi><mn>2</mn></msup><mo>+</mo><mi>bx</mi><mo>+</mo><mi>c</mi><mo>=</mo><mn>0</mn></math></p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 2.8</h4>
+<p class="text-blue-700 dark:text-blue-300">Solve: 2x² - 5x + 1 = 0</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>a = 2, b = -5, c = 1</p>
+<p>x = [5 ± √(25 - 8)] / 4</p>
+<p>x = [5 ± √17] / 4</p>
+<p>x = (5 + √17)/4 or (5 - √17)/4</p>
+</div>
+
+<h2>2.6 Inequalities</h2>
+
+<p>Inequalities use symbols: <, >, ≤, ≥. Solve them like equations but remember:</p>
+<ul>
+  <li>Multiplying or dividing by a negative number reverses the inequality sign</li>
+</ul>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 2.9</h4>
+<p class="text-blue-700 dark:text-blue-300">Solve: 3x - 7 ≤ 2x + 5</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>3x - 2x ≤ 5 + 7</p>
+<p>x ≤ 12</p>
+</div>
+
+<h2>Practice Exercises</h2>
+
+<div class="rounded-xl border-2 border-green-200 bg-green-50 p-6 my-6 dark:border-green-800 dark:bg-green-900/20">
+<h4 class="font-semibold text-green-800 dark:text-green-200 mb-3">Exercise 2</h4>
+<ol class="space-y-2 text-green-700 dark:text-green-300">
+  <li>1. Simplify: 5a + 3b - 2a + 7b</li>
+  <li>2. Expand: 4(2x - 3)</li>
+  <li>3. Expand: (x + 4)(x - 2)</li>
+  <li>4. Factorise: 12x² - 8x</li>
+  <li>5. Factorise: x² + 7x + 12</li>
+  <li>6. Solve: 5x + 12 = 2x - 6</li>
+  <li>7. Solve: x² - 2x - 15 = 0</li>
+  <li>8. Solve: 2x² + 3x - 2 = 0 (use the quadratic formula)</li>
+  <li>9. Solve: 4x - 9 > 2x + 7</li>
+  <li>10. If 3(x - 2) = 2(x + 3), find x</li>
+</ol>
+</div>
+
+<blockquote class="border-l-4 border-green-500 bg-green-50 p-4 my-6 dark:border-green-400 dark:bg-green-900/30">
+  <p class="font-semibold text-green-800 dark:text-green-200">Key Points to Remember:</p>
+  <ul class="text-green-700 dark:text-green-300 text-sm mt-2">
+    <li>✓ Always check your solutions by substituting back</li>
+    <li>✓ When solving inequalities, remember to flip the sign when multiplying/dividing by a negative</li>
+    <li>✓ Look for common factors before trying other factorisation methods</li>
+    <li>✓ Quadratic equations can have 0, 1, or 2 solutions</li>
+  </ul>
+</blockquote>`,
+    estimatedReadingTime: 25,
+    createdAt: new Date('2026-06-05'),
+  },
+  {
+    id: 'math-ch-3',
+    bookId: 'lgcse-maths-workbook',
+    title: 'Geometry and Measurement',
+    slug: 'geometry-and-measurement',
+    chapterNumber: 3,
+    content: `<h1>CHAPTER 3: Geometry and Measurement</h1>
+
+<blockquote>
+  <strong>Chapter Objectives:</strong><br />
+  By the end of this chapter, you should be able to calculate perimeter, area, and volume of various shapes, understand angle properties, and apply Pythagoras' theorem.
+</blockquote>
+
+<h2>3.1 Properties of Angles</h2>
+
+<h3>Angle Types</h3>
+<ul>
+  <li>Acute angle: Less than 90°</li>
+  <li>Right angle: Exactly 90°</li>
+  <li>Obtuse angle: Between 90° and 180°</li>
+  <li>Straight angle: Exactly 180°</li>
+  <li>Reflex angle: Between 180° and 360°</li>
+</ul>
+
+<h3>Angle Rules</h3>
+<ul>
+  <li>Angles on a straight line add up to 180°</li>
+  <li>Angles at a point add up to 360°</li>
+  <li>Vertically opposite angles are equal</li>
+  <li>Corresponding angles are equal (parallel lines)</li>
+  <li>Alternate angles are equal (parallel lines)</li>
+  <li>Co-interior angles add up to 180° (parallel lines)</li>
+</ul>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 3.1</h4>
+<p class="text-blue-700 dark:text-blue-300">Find angle x when two angles on a straight line are x and 72°.</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>x + 72° = 180°</p>
+<p>x = 180° - 72° = 108°</p>
+</div>
+
+<h2>3.2 Perimeter and Area of 2D Shapes</h2>
+
+<h3>Rectangle</h3>
+<p>Perimeter = 2(L + W), Area = L × W</p>
+
+<h3>Triangle</h3>
+<p>Area = <math><mfrac><mn>1</mn><mn>2</mn></mfrac></math> × base × height</p>
+
+<h3>Circle</h3>
+<p>Circumference = 2πr, Area = πr²</p>
+
+<h3>Trapezium</h3>
+<p>Area = <math><mfrac><mn>1</mn><mn>2</mn></mfrac></math>(a + b)h where a and b are parallel sides and h is the height</p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 3.2</h4>
+<p class="text-blue-700 dark:text-blue-300">A circle has a radius of 7 cm. Calculate its circumference and area. (Use π = 22/7)</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>Circumference = 2πr = 2 × (22/7) × 7 = 44 cm</p>
+<p>Area = πr² = (22/7) × 7² = (22/7) × 49 = 154 cm²</p>
+</div>
+
+<h2>3.3 Volume and Surface Area of 3D Shapes</h2>
+
+<h3>Rectangular Prism (Cuboid)</h3>
+<p>Volume = L × W × H</p>
+<p>Surface Area = 2(LW + LH + WH)</p>
+
+<h3>Cylinder</h3>
+<p>Volume = πr²h</p>
+<p>Surface Area = 2πrh + 2πr²</p>
+
+<h3>Cone</h3>
+<p>Volume = <math><mfrac><mn>1</mn><mn>3</mn></mfrac></math>πr²h</p>
+
+<h3>Sphere</h3>
+<p>Volume = <math><mfrac><mn>4</mn><mn>3</mn></mfrac></math>πr³</p>
+<p>Surface Area = 4πr²</p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 3.3</h4>
+<p class="text-blue-700 dark:text-blue-300">A cylinder has radius 5 cm and height 12 cm. Find its volume. (Use π = 3.14)</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>Volume = πr²h = 3.14 × 5² × 12</p>
+<p>= 3.14 × 25 × 12 = 942 cm³</p>
+</div>
+
+<h2>3.4 Pythagoras' Theorem</h2>
+
+<p>In a right-angled triangle: a² + b² = c² where c is the hypotenuse (longest side).</p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 3.4</h4>
+<p class="text-blue-700 dark:text-blue-300">A right-angled triangle has sides of 6 cm and 8 cm. Find the length of the hypotenuse.</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>c² = 6² + 8² = 36 + 64 = 100</p>
+<p>c = √100 = 10 cm</p>
+</div>
+
+<h2>Practice Exercises</h2>
+
+<div class="rounded-xl border-2 border-green-200 bg-green-50 p-6 my-6 dark:border-green-800 dark:bg-green-900/20">
+<h4 class="font-semibold text-green-800 dark:text-green-200 mb-3">Exercise 3</h4>
+<ol class="space-y-2 text-green-700 dark:text-green-300">
+  <li>1. Find the area of a triangle with base 12 cm and height 8 cm.</li>
+  <li>2. A rectangle has length 15 m and width 8 m. Find its perimeter and area.</li>
+  <li>3. Find the circumference of a circle with diameter 14 cm. (Use π = 22/7)</li>
+  <li>4. A cuboid measures 8 cm × 5 cm × 3 cm. Find its volume and surface area.</li>
+  <li>5. Find the volume of a sphere with radius 6 cm. (Use π = 3.14)</li>
+  <li>6. A right-angled triangle has a hypotenuse of 13 cm and one side of 5 cm. Find the other side.</li>
+  <li>7. Find the area of a trapezium with parallel sides 10 cm and 6 cm, and height 4 cm.</li>
+  <li>8. Two angles are supplementary (add to 180°). One angle is 48°. Find the other.</li>
+  <li>9. Find the volume of a cone with radius 3 cm and height 7 cm. (Use π = 22/7)</li>
+  <li>10. A rectangular garden is 20 m long and 15 m wide. A path of width 1 m runs around it. Find the area of the path.</li>
+</ol>
+</div>
+
+<blockquote class="border-l-4 border-green-500 bg-green-50 p-4 my-6 dark:border-green-400 dark:bg-green-900/30">
+  <p class="font-semibold text-green-800 dark:text-green-200">Key Points to Remember:</p>
+  <ul class="text-green-700 dark:text-green-300 text-sm mt-2">
+    <li>✓ Always include units in your answers</li>
+    <li>✓ π can be approximated as 22/7 or 3.14</li>
+    <li>✓ The hypotenuse is always the longest side in Pythagoras</li>
+    <li>✓ Check if the shape is 2D or 3D before choosing the correct formula</li>
+  </ul>
+</blockquote>`,
+    estimatedReadingTime: 25,
+    createdAt: new Date('2026-06-10'),
+  },
+  {
+    id: 'math-ch-4',
+    bookId: 'lgcse-maths-workbook',
+    title: 'Statistics and Probability',
+    slug: 'statistics-and-probability',
+    chapterNumber: 4,
+    content: `<h1>CHAPTER 4: Statistics and Probability</h1>
+
+<blockquote>
+  <strong>Chapter Objectives:</strong><br />
+  By the end of this chapter, you should be able to calculate measures of central tendency, interpret data displays, and calculate simple probabilities.
+</blockquote>
+
+<h2>4.1 Measures of Central Tendency</h2>
+
+<h3>Mean</h3>
+<p>Mean = Sum of all values ÷ Number of values</p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 4.1</h4>
+<p class="text-blue-700 dark:text-blue-300">Find the mean of: 4, 7, 9, 10, 15</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>Sum = 4 + 7 + 9 + 10 + 15 = 45</p>
+<p>Number of values = 5</p>
+<p>Mean = 45 ÷ 5 = 9</p>
+</div>
+
+<h3>Median</h3>
+<p>The middle value when data is arranged in order.</p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 4.2</h4>
+<p class="text-blue-700 dark:text-blue-300">Find the median of: 3, 8, 2, 10, 6</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>Arrange in order: 2, 3, 6, 8, 10</p>
+<p>Median = 6 (the middle value)</p>
+</div>
+
+<h3>Mode</h3>
+<p>The most frequent value in a data set.</p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 4.3</h4>
+<p class="text-blue-700 dark:text-blue-300">Find the mode of: 2, 4, 4, 5, 7, 7, 7, 9</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>Mode = 7 (appears 3 times)</p>
+</div>
+
+<h2>4.2 Data Displays</h2>
+
+<h3>Bar Chart</h3>
+<p>Used for categorical data. Bars of equal width represent frequencies.</p>
+
+<h3>Pie Chart</h3>
+<p>A circle divided into sectors to show proportions. Each sector angle = (frequency ÷ total) × 360°</p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 4.4</h4>
+<p class="text-blue-700 dark:text-blue-300">A survey of 60 students shows their favourite subjects: Maths (15), English (20), Science (10), History (15). Draw a pie chart.</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>Maths: (15/60) × 360° = 90°</p>
+<p>English: (20/60) × 360° = 120°</p>
+<p>Science: (10/60) × 360° = 60°</p>
+<p>History: (15/60) × 360° = 90°</p>
+</div>
+
+<h3>Histogram</h3>
+<p>Used for continuous data grouped into intervals. The area of each bar represents frequency.</p>
+
+<h2>4.3 Probability</h2>
+
+<p>Probability measures the likelihood of an event occurring.</p>
+<p>Probability = Number of favourable outcomes ÷ Total number of possible outcomes</p>
+<p>Probability ranges from 0 (impossible) to 1 (certain).</p>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 4.5</h4>
+<p class="text-blue-700 dark:text-blue-300">A bag contains 3 red balls, 4 blue balls, and 5 green balls. What is the probability of randomly picking a blue ball?</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>Total balls = 3 + 4 + 5 = 12</p>
+<p>Favourable outcomes = 4 (blue balls)</p>
+<p>P(blue) = 4/12 = 1/3</p>
+</div>
+
+<h2>Practice Exercises</h2>
+
+<div class="rounded-xl border-2 border-green-200 bg-green-50 p-6 my-6 dark:border-green-800 dark:bg-green-900/20">
+<h4 class="font-semibold text-green-800 dark:text-green-200 mb-3">Exercise 4</h4>
+<ol class="space-y-2 text-green-700 dark:text-green-300">
+  <li>1. Find the mean, median, and mode of: 12, 15, 18, 15, 20, 12, 22</li>
+  <li>2. Ten students scored: 56, 78, 65, 89, 72, 91, 60, 75, 84, 70. Find the mean score.</li>
+  <li>3. A dice is rolled once. What is the probability of rolling a number greater than 4?</li>
+  <li>4. A deck of 52 cards contains 4 aces. What is the probability of drawing an ace?</li>
+  <li>5. In a class of 30 students, 18 are girls. If one student is chosen at random, what is the probability it is a boy?</li>
+  <li>6. Two coins are tossed. List all possible outcomes and find P(at least one head).</li>
+  <li>7. A survey shows: 10 people like tea, 15 like coffee, 5 like both. Draw a Venn diagram.</li>
+  <li>8. The mean of 5 numbers is 12. If one number is removed, the mean becomes 11. What number was removed?</li>
+</ol>
+</div>
+
+<blockquote class="border-l-4 border-green-500 bg-green-50 p-4 my-6 dark:border-green-400 dark:bg-green-900/30">
+  <p class="font-semibold text-green-800 dark:text-green-200">Key Points to Remember:</p>
+  <ul class="text-green-700 dark:text-green-300 text-sm mt-2">
+    <li>✓ Always order data before finding the median</li>
+    <li>✓ Probability is always between 0 and 1</li>
+    <li>✓ The sum of probabilities of all outcomes is 1</li>
+    <li>✓ Choose the right average: mean for normal data, median for skewed data, mode for categorical data</li>
+  </ul>
+</blockquote>`,
+    estimatedReadingTime: 20,
+    createdAt: new Date('2026-06-15'),
+  },
+  {
+    id: 'math-ch-5',
+    bookId: 'lgcse-maths-workbook',
+    title: 'Mixed Revision and Past Paper Practice',
+    slug: 'mixed-revision-and-past-paper-practice',
+    chapterNumber: 5,
+    content: `<h1>CHAPTER 5: Mixed Revision and Past Paper Practice</h1>
+
+<blockquote>
+  <strong>Chapter Objectives:</strong><br />
+  This chapter brings together all the topics covered in this workbook. Complete these mixed exercises and past-paper style questions to test your understanding.
+</blockquote>
+
+<h2>5.1 Mixed Topic Review</h2>
+
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-4 my-6 dark:border-blue-800 dark:bg-blue-900/20">
+<h4 class="font-semibold text-blue-800 dark:text-blue-200">Example 5.1 — Mixed Problem</h4>
+<p class="text-blue-700 dark:text-blue-300">Simplify: <math><mfrac><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>6</mn></mrow><mn>3</mn></mfrac><mo>−</mo><mfrac><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>4</mn></mrow><mn>2</mn></mfrac></math></p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p><math><mfrac><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>6</mn></mrow><mn>3</mn></mfrac><mo>=</mo><mi>x</mi><mo>+</mo><mn>2</mn></math></p>
+<p><math><mfrac><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>4</mn></mrow><mn>2</mn></mfrac><mo>=</mo><mi>x</mi><mo>−</mo><mn>2</mn></math></p>
+<p>(x + 2) - (x - 2) = x + 2 - x + 2 = 4</p>
+</div>
+
+<h2>5.2 Examination Tips</h2>
+
+<ul>
+  <li><strong>Read each question carefully</strong> — identify what is being asked</li>
+  <li><strong>Show all working</strong> — marks are awarded for method even if the final answer is wrong</li>
+  <li><strong>Check units</strong> — make sure all quantities are in the same unit</li>
+  <li><strong>Estimate first</strong> — this helps you know if your answer is reasonable</li>
+  <li><strong>Manage your time</strong> — don't spend too long on one question</li>
+  <li><strong>Attempt every question</strong> — even a partially correct answer earns marks</li>
+</ul>
+
+<h2>Practice Examination: Paper 1</h2>
+
+<div class="rounded-xl border-2 border-orange-200 bg-orange-50 p-6 my-6 dark:border-orange-800 dark:bg-orange-900/20">
+<h4 class="font-semibold text-orange-800 dark:text-orange-200 mb-3">Section A — Multiple Choice</h4>
+<ol class="space-y-3 text-orange-700 dark:text-orange-300">
+  <li>1. Which of the following is equivalent to 0.75?<br />
+    A) 3/5 &nbsp;&nbsp; B) 3/4 &nbsp;&nbsp; C) 7/10 &nbsp;&nbsp; D) 2/3</li>
+  <li>2. Solve: 5x - 3 = 12<br />
+    A) x = 1.8 &nbsp;&nbsp; B) x = 3 &nbsp;&nbsp; C) x = 5 &nbsp;&nbsp; D) x = 15</li>
+  <li>3. What is the area of a triangle with base 10 cm and height 8 cm?<br />
+    A) 18 cm² &nbsp;&nbsp; B) 40 cm² &nbsp;&nbsp; C) 80 cm² &nbsp;&nbsp; D) 20 cm²</li>
+  <li>4. The probability of getting heads when tossing a fair coin is:<br />
+    A) 0 &nbsp;&nbsp; B) 1/2 &nbsp;&nbsp; C) 1 &nbsp;&nbsp; D) 1/4</li>
+  <li>5. Which of these is a prime number?<br />
+    A) 21 &nbsp;&nbsp; B) 27 &nbsp;&nbsp; C) 29 &nbsp;&nbsp; D) 33</li>
+</ol>
+</div>
+
+<div class="rounded-xl border-2 border-orange-200 bg-orange-50 p-6 my-6 dark:border-orange-800 dark:bg-orange-900/20">
+<h4 class="font-semibold text-orange-800 dark:text-orange-200 mb-3">Section B — Short Answer</h4>
+<ol class="space-y-3 text-orange-700 dark:text-orange-300">
+  <li>6. Calculate: 25% of 360</li>
+  <li>7. Find the LCM of 12 and 18</li>
+  <li>8. Solve: 2(x - 3) = 3(x + 1)</li>
+  <li>9. Calculate the mean of: 6, 10, 14, 18, 22</li>
+  <li>10. A car travels 240 km in 3 hours. What is its average speed?</li>
+</ol>
+</div>
+
+<div class="rounded-xl border-2 border-orange-200 bg-orange-50 p-6 my-6 dark:border-orange-800 dark:bg-orange-900/20">
+<h4 class="font-semibold text-orange-800 dark:text-orange-200 mb-3">Section C — Extended Response</h4>
+<ol class="space-y-3 text-orange-700 dark:text-orange-300">
+  <li>11. A shopkeeper buys a shirt for M200 and sells it for M260.
+    <br />a) Calculate the profit.
+    <br />b) Calculate the percentage profit.</li>
+  <li>12. A cylindrical water tank has radius 3.5 m and height 4 m.
+    <br />a) Calculate the volume of the tank in m³. (Use π = 22/7)
+    <br />b) How many litres of water can it hold? (1 m³ = 1000 L)</li>
+  <li>13. Solve the quadratic equation: x² - 6x + 8 = 0</li>
+  <li>14. The marks of 8 students in a test are: 45, 62, 58, 71, 49, 65, 80, 54
+    <br />a) Arrange the marks in ascending order.
+    <br />b) Find the median.
+    <br />c) Find the range.</li>
+</ol>
+</div>
+
+<h2>Answers to Selected Exercises</h2>
+
+<div class="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 my-6 dark:border-gray-700 dark:bg-gray-900/50">
+<h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-3">Practice Examination Answers</h4>
+
+<p class="font-semibold mt-3 mb-1">Section A (Multiple Choice):</p>
+<p>1. B) 3/4 &nbsp; 2. B) x = 3 &nbsp; 3. B) 40 cm² &nbsp; 4. B) 1/2 &nbsp; 5. C) 29</p>
+
+<p class="font-semibold mt-3 mb-1">Section B (Short Answer):</p>
+<p>6. 90 &nbsp; 7. 36 &nbsp; 8. x = -9 &nbsp; 9. 14 &nbsp; 10. 80 km/h</p>
+
+<p class="font-semibold mt-3 mb-1">Section C (Extended Response):</p>
+<p>11a) Profit = M60 &nbsp; 11b) Percentage profit = 30%</p>
+<p>12a) V = πr²h = (22/7) × 12.25 × 4 = 154 m³ &nbsp; 12b) 154,000 L</p>
+<p>13. x = 2 or x = 4</p>
+<p>14a) 45, 49, 54, 58, 62, 65, 71, 80 &nbsp; 14b) Median = 60 &nbsp; 14c) Range = 35</p>
+</div>
+
+<blockquote class="border-l-4 border-yellow-500 bg-yellow-50 p-4 my-6 dark:border-yellow-400 dark:bg-yellow-900/30">
+  <p class="font-semibold text-yellow-800 dark:text-yellow-200">Final Words of Encouragement:</p>
+  <p class="text-yellow-700 dark:text-yellow-300 text-sm mt-2">
+    "Success in mathematics is not about being naturally gifted — it is about consistent practice, learning from mistakes, and believing that you can improve. Every problem you solve builds your confidence. Keep working hard, stay focused, and trust the process. You have what it takes to succeed in your LGCSE examinations!"
+  </p>
+</blockquote>`,
+    estimatedReadingTime: 30,
+    createdAt: new Date('2026-06-20'),
+  },
+];
+
+export const STATIC_BOOK = STATIC_BOOKS[0];
+export const STATIC_CHAPTERS = MATH_CHAPTERS;
+
+const MYSTERY_CHAPTERS: Chapter[] = [
   {
     id: 'ch-1',
     bookId: 'the-mystery-of-god',
@@ -631,15 +1369,23 @@ Adam was not created as the final revelation of humanity, but as the first expre
 ];
 
 export function getStaticBookBySlug(slug: string): Book | undefined {
-  if (STATIC_BOOK.slug === slug) return STATIC_BOOK;
-  return undefined;
+  return STATIC_BOOKS.find(b => b.slug === slug);
 }
 
 export function getStaticChapterBySlug(bookSlug: string, chapterSlug: string): Chapter | undefined {
-  if (bookSlug !== STATIC_BOOK.slug) return undefined;
-  return STATIC_CHAPTERS.find(c => c.slug === chapterSlug);
+  const book = STATIC_BOOKS.find(b => b.slug === bookSlug);
+  if (!book) return undefined;
+  const chapters = getStaticChapters(book.id);
+  return chapters.find(c => c.slug === chapterSlug);
 }
 
-export function getStaticBookReadingTime(): number {
-  return STATIC_CHAPTERS.reduce((sum, ch) => sum + ch.estimatedReadingTime, 0);
+export function getStaticBookReadingTime(bookId: string): number {
+  const chapters = getStaticChapters(bookId);
+  return chapters.reduce((sum, ch) => sum + (ch.estimatedReadingTime || 0), 0);
+}
+
+export function getStaticChapters(bookId: string): Chapter[] {
+  if (bookId === 'lgcse-maths-workbook') return MATH_CHAPTERS;
+  if (bookId === 'the-mystery-of-god') return MYSTERY_CHAPTERS;
+  return [];
 }

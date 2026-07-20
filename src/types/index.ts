@@ -163,3 +163,36 @@ export interface ReadingProgress {
   percentage: number;
   updatedAt: Date;
 }
+
+export interface ChallengeDay {
+  day: number;
+  hours: string;
+  subject: string;
+  pastPaper: string;
+  score: string;
+  lesson: string;
+  mentorNotes: string;
+}
+
+export interface ChallengeData {
+  id: string;
+  userId: string;
+  goal: string;
+  studentName: string;
+  dailyChecklist: Record<string, boolean>;
+  weeklyGoals: Record<string, boolean>;
+  progress: ChallengeDay[];
+  reflections: string[];
+  mentorNotes: {
+    attendance: string;
+    discipline: string;
+    effort: string;
+    improvement: string;
+    confidence: string;
+    nextFocus: string;
+    comments: string;
+  };
+  startedAt: Date;
+  updatedAt: Date;
+  completed: boolean;
+}

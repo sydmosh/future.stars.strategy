@@ -25,9 +25,9 @@ import {
   deleteObject,
 } from 'firebase/storage';
 import { db, storage } from '@/lib/firebase';
-import { STATIC_BOOK, STATIC_CHAPTERS, getStaticBookBySlug, getStaticChapterBySlug, getStaticBookReadingTime } from '@/data/books';
+import { STATIC_BOOKS, STATIC_BOOK, STATIC_CHAPTERS, getStaticBookBySlug, getStaticChapterBySlug, getStaticBookReadingTime, getStaticChapters } from '@/data/books';
 import { STATIC_CATEGORIES } from '@/data/categories';
-import type { Book, Chapter, Category, Review, Comment, NewsletterSubscriber, ContactMessage, SiteSettings, ReadingProgress, UserProfile } from '@/types';
+import type { Book, Chapter, Category, Review, Comment, NewsletterSubscriber, ContactMessage, SiteSettings, ReadingProgress, UserProfile, ChallengeData } from '@/types';
 
 function isFirebaseAvailable(): boolean {
   return !!db && !!storage;
@@ -42,7 +42,7 @@ export async function fetchBooks(opts?: {
   limitCount?: number;
 }): Promise<Book[]> {
   if (!isFirebaseAvailable()) {
-    let books = [STATIC_BOOK];
+    let books = [...STATIC_BOOKS];
     if (opts?.featured) books = books.filter(b => b.featured);
     if (opts?.published !== false) books = books.filter(b => b.published);
     if (opts?.category) books = books.filter(b => b.category.toLowerCase() === opts.category?.toLowerCase());
@@ -77,7 +77,7 @@ export async function fetchBookBySlug(slug: string): Promise<Book | null> {
 
 export async function fetchBookById(id: string): Promise<Book | null> {
   if (!isFirebaseAvailable()) {
-    return STATIC_BOOK.id === id ? STATIC_BOOK : null;
+    return STATIC_BOOKS.find(b => b.id === id) || null;
   }
   const snap = await getDoc(doc(db!, 'books', id));
   if (!snap.exists()) return null;
@@ -87,7 +87,7 @@ export async function fetchBookById(id: string): Promise<Book | null> {
 // Chapters
 export async function fetchChapters(bookId: string): Promise<Chapter[]> {
   if (!isFirebaseAvailable()) {
-    return bookId === STATIC_BOOK.id ? STATIC_CHAPTERS : [];
+    return getStaticChapters(bookId);
   }
   const q = query(collection(db!, 'chapters'), where('bookId', '==', bookId), orderBy('chapterNumber', 'asc'));
   const snap = await getDocs(q);
@@ -245,8 +245,7 @@ export async function fetchSettings(): Promise<SiteSettings | null> {
 export async function searchBooks(term: string): Promise<Book[]> {
   if (!isFirebaseAvailable()) {
     const lower = term.toLowerCase();
-    const books = [STATIC_BOOK];
-    return books.filter(b =>
+    return STATIC_BOOKS.filter(b =>
       b.title.toLowerCase().includes(lower) ||
       b.author.toLowerCase().includes(lower) ||
       b.tags.some(t => t.toLowerCase().includes(lower))
@@ -272,7 +271,7 @@ export async function fetchDashboardStats(): Promise<{
   totalCategories: number;
 }> {
   if (!isFirebaseAvailable()) {
-    return { totalBooks: 1, totalReaders: 1, totalReviews: 0, totalCategories: 9 };
+    return { totalBooks: STATIC_BOOKS.length, totalReaders: 1, totalReviews: 0, totalCategories: 9 };
   }
   const [booksSnap, usersSnap, reviewsSnap, catsSnap] = await Promise.all([
     getDocs(collection(db!, 'books')),
@@ -286,4 +285,18 @@ export async function fetchDashboardStats(): Promise<{
     totalReviews: reviewsSnap.size,
     totalCategories: catsSnap.size || STATIC_CATEGORIES.length,
   };
+}
+
+// Challenge / LGCSE Success Tracker
+export async function saveChallengeData(userId: string, data: Partial<ChallengeData>): Promise<void> {
+  if (!isFirebaseAvailable()) return;
+  const ref = doc(db!, 'challenges', userId);
+  await setDoc(ref, { ...data, userId, updatedAt: serverTimestamp() }, { merge: true });
+}
+
+export async function fetchChallengeData(userId: string): Promise<ChallengeData | null> {
+  if (!isFirebaseAvailable()) return null;
+  const snap = await getDoc(doc(db!, 'challenges', userId));
+  if (!snap.exists()) return null;
+  return snap.data() as ChallengeData;
 }
