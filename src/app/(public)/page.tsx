@@ -18,7 +18,6 @@ import {
   Globe,
   Quote,
   X,
-  ExternalLink,
   Layers,
   Eye,
   Heart,
@@ -726,20 +725,12 @@ export default function HomePage() {
                   <X className="h-5 w-5" />
                 </a>
                 <a
-                  href={SOCIAL_LINKS.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-gray-600 transition-all hover:bg-gray-200 hover:text-gray-900 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                >
-                  <Globe className="h-5 w-5" />
-                </a>
-                <a
-                  href={SOCIAL_LINKS.linkedin}
+                  href={SOCIAL_LINKS.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-gray-600 transition-all hover:bg-blue-100 hover:text-blue-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-blue-900 dark:hover:text-blue-400"
                 >
-                  <ExternalLink className="h-5 w-5" />
+                  <Globe className="h-5 w-5" />
                 </a>
                 <a
                   href={`mailto:${AUTHOR_EMAIL}`}

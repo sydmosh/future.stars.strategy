@@ -91,6 +91,17 @@ service cloud.firestore {
       allow write: if request.auth != null;
     }
 
+    // Solutions
+    match /solutions/{solutionId} {
+      allow read: if true;
+      allow create: if request.auth != null && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+      allow update: if request.auth != null && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+      allow delete: if request.auth != null && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
     // Default deny
     match /{document=**} {
       allow read, write: if false;

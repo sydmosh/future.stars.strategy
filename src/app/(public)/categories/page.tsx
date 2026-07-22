@@ -14,6 +14,10 @@ import {
   Heart,
   ArrowRight,
   Library,
+  Calculator,
+  Leaf,
+  Landmark,
+  Atom,
 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -42,6 +46,10 @@ const iconMap: Record<string, React.ReactNode> = {
   Leadership: <Users className="h-6 w-6" />,
   Business: <TrendingUp className="h-6 w-6" />,
   Education: <Book className="h-6 w-6" />,
+  'Maths Booklets': <Calculator className="h-6 w-6" />,
+  'Biology Booklets': <Leaf className="h-6 w-6" />,
+  'Accounting Booklets': <Landmark className="h-6 w-6" />,
+  'Physics Booklets': <Atom className="h-6 w-6" />,
   AI: <Sparkles className="h-6 w-6" />,
   'Software Development': <Layers className="h-6 w-6" />,
   'Personal Growth': <Heart className="h-6 w-6" />,
@@ -54,6 +62,10 @@ const gradientMap: Record<string, string> = {
   Leadership: 'from-orange-600 to-red-600',
   Business: 'from-yellow-600 to-orange-600',
   Education: 'from-indigo-600 to-purple-600',
+  'Maths Booklets': 'from-indigo-600 to-purple-600',
+  'Biology Booklets': 'from-green-600 to-emerald-600',
+  'Accounting Booklets': 'from-amber-600 to-orange-600',
+  'Physics Booklets': 'from-blue-600 to-cyan-600',
   AI: 'from-pink-600 to-rose-600',
   'Software Development': 'from-teal-600 to-green-600',
   'Personal Growth': 'from-violet-600 to-purple-600',
@@ -76,10 +88,12 @@ function CategoryCardSkeleton() {
 function CategoryCard({ category, bookCount }: { category: Category; bookCount: number }) {
   const gradient = gradientMap[category.name] || 'from-blue-600 to-indigo-600';
   const icon = iconMap[category.name] || <Library className="h-6 w-6" />;
+  const isBookletCategory = category.slug.endsWith('-booklets');
+  const href = isBookletCategory ? '/books/math-booklets' : `/books?cat=${category.slug}`;
 
   return (
     <motion.div variants={itemVariants} layout>
-      <Link href={`/books?cat=${category.slug}`}>
+      <Link href={href}>
         <Card className="group cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
           <div
             className={cn(

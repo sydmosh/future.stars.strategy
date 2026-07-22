@@ -12,6 +12,8 @@ import {
   X,
   BookOpen,
   SlidersHorizontal,
+  Calculator,
+  ChevronRight,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -400,6 +402,33 @@ export default function BooksPage() {
                   Showing results for &ldquo;{debouncedSearch}&rdquo;
                 </p>
               )}
+
+              {!selectedCategory && !debouncedSearch && (
+                <Link href="/books/math-booklets">
+                  <div className="mb-8 overflow-hidden rounded-2xl border border-indigo-200 bg-gradient-to-r from-indigo-50 to-purple-50 transition-all hover:shadow-lg hover:-translate-y-0.5 dark:border-indigo-800 dark:from-indigo-900/30 dark:to-purple-900/30">
+                    <div className="flex items-center justify-between p-6">
+                      <div className="flex items-center gap-4">
+                        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600">
+                          <Calculator className="h-7 w-7 text-white" />
+                        </div>
+                        <div>
+                          <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+                            Maths Booklets
+                          </h2>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">
+                            Interactive practice booklets with step-by-step solutions
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm font-medium text-indigo-600 dark:text-indigo-400">
+                        Open
+                        <ChevronRight className="h-4 w-4" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              )}
+
               <motion.div
                 variants={containerVariants}
                 initial="hidden"

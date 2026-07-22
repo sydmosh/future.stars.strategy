@@ -182,7 +182,7 @@ export default function RegisterPage() {
                         id="name"
                         name="name"
                         type="text"
-                        placeholder="John Doe"
+                        placeholder="Thabo Mokoena"
                         value={formData.name}
                         onChange={handleChange}
                         disabled={loading}
@@ -213,7 +213,7 @@ export default function RegisterPage() {
                           id="username"
                           name="username"
                           type="text"
-                          placeholder="johndoe"
+                          placeholder="thabom"
                           value={formData.username}
                           onChange={handleChange}
                           disabled={loading}
@@ -245,7 +245,7 @@ export default function RegisterPage() {
                         id="email"
                         name="email"
                         type="email"
-                        placeholder="you@example.com"
+                        placeholder="thabo@example.com"
                         value={formData.email}
                         onChange={handleChange}
                         disabled={loading}
@@ -274,7 +274,7 @@ export default function RegisterPage() {
                         id="phone"
                         name="phone"
                         type="tel"
-                        placeholder="+1 (555) 000-0000"
+                        placeholder="+266 5555 5555"
                         value={formData.phone}
                         onChange={handleChange}
                         disabled={loading}
@@ -364,7 +364,7 @@ export default function RegisterPage() {
                     <Textarea
                       id="bio"
                       name="bio"
-                      placeholder="Tell us about yourself and your reading interests..."
+                      placeholder="Tell us about yourself, your love for Sesotho literature, and your reading interests..."
                       value={formData.bio}
                       onChange={handleChange}
                       disabled={loading}

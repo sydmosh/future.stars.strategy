@@ -196,3 +196,19 @@ export interface ChallengeData {
   updatedAt: Date;
   completed: boolean;
 }
+
+export interface SolutionStep {
+  stepNumber: number;
+  text: string;
+}
+
+export interface Solution {
+  id: string;
+  paperId: string;
+  questionNumber: number;
+  title: string;
+  steps: SolutionStep[];
+  createdBy: string;
+  createdAt: Date;
+  updatedAt: Date;
+}

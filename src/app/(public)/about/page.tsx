@@ -6,8 +6,7 @@ import {
   Book,
   Mail,
   MessageCircle,
-  GitBranch,
-  Briefcase,
+  Globe,
   MapPin,
   Calendar,
   Award,
@@ -94,9 +93,8 @@ const defaultSpeaking = [
 ];
 
 const socialLinks = [
-  { href: SOCIAL_LINKS.twitter, icon: MessageCircle, label: 'Twitter' },
-  { href: SOCIAL_LINKS.github, icon: GitBranch, label: 'GitHub' },
-  { href: SOCIAL_LINKS.linkedin, icon: Briefcase, label: 'LinkedIn' },
+  { href: SOCIAL_LINKS.facebook, icon: Globe, label: 'Facebook' },
+  { href: SOCIAL_LINKS.twitter, icon: MessageCircle, label: 'X (Twitter)' },
   { href: `mailto:${AUTHOR_EMAIL}`, icon: Mail, label: 'Email' },
 ];
 

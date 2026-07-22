@@ -27,7 +27,7 @@ export const STATIC_BOOKS: Book[] = [
     subtitle: 'Comprehensive Exam Preparation Guide',
     slug: 'lgcse-maths-workbook',
     description: 'A comprehensive mathematics workbook designed for LGCSE examination preparation. Covers all key topics including Number and Numeration, Algebra, Geometry, Statistics, Trigonometry, and more. Each chapter includes worked examples, practice exercises, and exam-style questions with step-by-step solutions. Written specifically for the LGCSE curriculum to help students build confidence and master essential mathematical concepts.',
-    coverImage: '',
+    coverImage: '/images/lgcse-maths-workbook-cover.png',
     author: 'Moshoeshoe Koali',
     category: 'Education',
     featured: true,
@@ -36,6 +36,26 @@ export const STATIC_BOOKS: Book[] = [
     language: 'English',
     readingTime: 0,
     createdAt: new Date('2026-06-01'),
+    updatedAt: new Date('2026-07-20'),
+    views: 0,
+    averageRating: 0,
+    totalReviews: 0,
+  },
+  {
+    id: 'lgcse-accounting-workbook',
+    title: 'LGCSE Accounting Workbook',
+    subtitle: 'Comprehensive Exam Preparation Guide',
+    slug: 'lgcse-accounting-workbook',
+    description: 'A comprehensive accounting workbook designed for LGCSE examination preparation. Covers all key topics including the accounting equation, double entry, books of original entry, ledger accounts, trial balance, financial statements, bank reconciliation, control accounts, correction of errors, depreciation, and partnership accounts. Each chapter includes worked examples, practice exercises, and exam-style questions with step-by-step solutions. Written specifically for the LGCSE curriculum to help students build confidence and master essential accounting concepts.',
+    coverImage: '/images/lgcse-accounting-workbook-cover.png',
+    author: 'Moshoeshoe Koali',
+    category: 'Education',
+    featured: true,
+    published: true,
+    tags: ['accounting', 'lgcse', 'exam-preparation', 'workbook', 'study-guide', 'revision', 'finance'],
+    language: 'English',
+    readingTime: 0,
+    createdAt: new Date('2026-07-20'),
     updatedAt: new Date('2026-07-20'),
     views: 0,
     averageRating: 0,
@@ -756,6 +776,1276 @@ d) 24 ÷ (-6) = -4</p>
   },
 ];
 
+const ACCOUNTING_CHAPTERS: Chapter[] = [
+  {
+    id: 'acc-ch-1',
+    bookId: 'lgcse-accounting-workbook',
+    title: 'The Accounting Equation and Double Entry',
+    slug: 'accounting-equation-and-double-entry',
+    chapterNumber: 1,
+    content: `<h1>CHAPTER 1: The Accounting Equation and Double Entry</h1>
+
+<blockquote>
+  <strong>Chapter Objectives:</strong><br />
+  By the end of this chapter, you should be able to understand the accounting equation, apply the double entry system, and classify accounts correctly.
+</blockquote>
+
+<h2>1.1 The Accounting Equation</h2>
+
+<p>The accounting equation is the foundation of all accounting. It states that:</p>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<p class="text-center text-xl font-bold text-emerald-800 dark:text-emerald-200">Assets = Capital + Liabilities</p>
+</div>
+
+<p>This equation must always balance. Every transaction affects at least two items in the equation.</p>
+
+<h3>Key Definitions</h3>
+<ul>
+  <li><strong>Assets</strong> — Resources owned by the business (e.g., cash, equipment, buildings, inventory)</li>
+  <li><strong>Liabilities</strong> — Amounts owed by the business to outsiders (e.g., creditors, loans, bank overdraft)</li>
+  <li><strong>Capital</strong> — The amount invested by the owner(s) in the business</li>
+</ul>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Example 1.1</h4>
+<p class="text-emerald-700 dark:text-emerald-300">Calculate the missing figure:</p>
+<p class="font-mono text-emerald-700 dark:text-emerald-300">a) Assets = M50,000, Capital = M30,000, Liabilities = ?<br />
+b) Assets = ?, Capital = M25,000, Liabilities = M15,000</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>a) Liabilities = Assets − Capital = M50,000 − M30,000 = <strong>M20,000</strong><br />
+b) Assets = Capital + Liabilities = M25,000 + M15,000 = <strong>M40,000</strong></p>
+</div>
+
+<h3>Effect of Transactions on the Accounting Equation</h3>
+
+<p>Every transaction changes the equation in at least two ways. Let us examine common transactions:</p>
+
+<div class="overflow-x-auto my-6">
+<table class="w-full text-sm border-collapse">
+<thead>
+<tr class="bg-emerald-100 dark:bg-emerald-900/40">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2 text-left">Transaction</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2 text-left">Effect on Assets</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2 text-left">Effect on Capital/Liabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Owner invests cash</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Cash (Asset) increases</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Capital increases</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Purchase equipment on credit</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Equipment (Asset) increases</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Creditor (Liability) increases</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Pay creditor by cheque</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Bank (Asset) decreases</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Creditor (Liability) decreases</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Owner withdraws goods for personal use</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Inventory (Asset) decreases</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Drawings reduce Capital</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h2>1.2 Double Entry System</h2>
+
+<p>Double entry is a system of recording transactions where every transaction has two effects: a <strong>debit</strong> entry and a <strong>credit</strong> entry.</p>
+
+<h3>The Golden Rules of Double Entry</h3>
+
+<div class="grid grid-cols-3 gap-4 my-6">
+<div class="rounded-xl border-2 border-blue-200 bg-blue-50 p-3 dark:border-blue-800 dark:bg-blue-900/20">
+<p class="font-bold text-center text-blue-800 dark:text-blue-200">ASSETS</p>
+<p class="text-center text-sm text-blue-700 dark:text-blue-300">Increase = Debit (Dr)<br />Decrease = Credit (Cr)</p>
+</div>
+<div class="rounded-xl border-2 border-purple-200 bg-purple-50 p-3 dark:border-purple-800 dark:bg-purple-900/20">
+<p class="font-bold text-center text-purple-800 dark:text-purple-200">LIABILITIES</p>
+<p class="text-center text-sm text-purple-700 dark:text-purple-300">Increase = Credit (Cr)<br />Decrease = Debit (Dr)</p>
+</div>
+<div class="rounded-xl border-2 border-amber-200 bg-amber-50 p-3 dark:border-amber-800 dark:bg-amber-900/20">
+<p class="font-bold text-center text-amber-800 dark:text-amber-200">CAPITAL</p>
+<p class="text-center text-sm text-amber-700 dark:text-amber-300">Increase = Credit (Cr)<br />Decrease = Debit (Dr)</p>
+</div>
+</div>
+
+<p>For <strong>Expenses</strong> and <strong>Drawings</strong>: Increases are recorded as Debits.<br />
+For <strong>Revenue</strong> and <strong>Income</strong>: Increases are recorded as Credits.</p>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Example 1.2</h4>
+<p class="text-emerald-700 dark:text-emerald-300">Record the following transactions using double entry:</p>
+<p class="text-emerald-700 dark:text-emerald-300">a) Started business with cash M100,000<br />
+b) Purchased goods for cash M20,000<br />
+c) Sold goods for cash M15,000</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<table class="w-full text-sm border-collapse mt-2">
+<thead>
+<tr class="bg-emerald-100 dark:bg-emerald-900/40">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">No.</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">Account Debited</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">Account Credited</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">Amount (M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">a)</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Cash</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Capital</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">100,000</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">b)</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Purchases</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Cash</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">20,000</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">c)</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Cash</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Sales</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">15,000</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h2>1.3 Classification of Accounts</h2>
+
+<p>Accounts are classified into three main categories:</p>
+
+<h3>Real Accounts (Assets)</h3>
+<p>Accounts of properties, possessions, and resources.<br />
+<em>Rule: Debit what comes in, Credit what goes out.</em></p>
+
+<h3>Nominal Accounts (Expenses, Revenue)</h3>
+<p>Accounts of income, expenses, gains, and losses.<br />
+<em>Rule: Debit all expenses and losses, Credit all income and gains.</em></p>
+
+<h3>Personal Accounts</h3>
+<p>Accounts of people, businesses, and organizations.<br />
+<em>Rule: Debit the receiver, Credit the giver.</em></p>
+
+<h2>Practice Exercises</h2>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50/50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/10">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Exercise 1.1</h4>
+<ol class="list-decimal list-inside space-y-2 text-emerald-700 dark:text-emerald-300">
+  <li>State the accounting equation.</li>
+  <li>Classify each of the following as Asset, Liability, or Capital:<br />
+    (a) Bank overdraft &nbsp; (b) Equipment &nbsp; (c) Creditors &nbsp; (d) Premises &nbsp; (e) Owner's investment</li>
+  <li>Calculate liabilities if assets are M75,000 and capital is M45,000.</li>
+  <li>A business has liabilities of M30,000 and capital of M50,000. What are the total assets?</li>
+  <li>Record the following using double entry:<br />
+    (a) Bought furniture for cash M5,000<br />
+    (b) Received a loan from bank M20,000<br />
+    (c) Paid rent by cheque M2,500</li>
+</ol>
+</div>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50/50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/10">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Exercise 1.2</h4>
+<ol class="list-decimal list-inside space-y-2 text-emerald-700 dark:text-emerald-300">
+  <li>Explain the difference between a debit and a credit entry.</li>
+  <li>Show the effect of each transaction on the accounting equation:<br />
+    (a) Purchased goods on credit M12,000<br />
+    (b) Paid creditor M4,000<br />
+    (c) Owner withdrew cash M1,000<br />
+    (d) Received commission M800</li>
+  <li>A trader has assets of M120,000 and liabilities of M45,000. Calculate the capital.</li>
+  <li>Identify whether each account is Real, Nominal, or Personal:<br />
+    (a) Rent Account &nbsp; (b) Debtors Account &nbsp; (c) Machinery Account &nbsp; (d) Sales Account</li>
+</ol>
+</div>
+
+<h2>Key Points to Remember</h2>
+<ul>
+  <li>Assets = Capital + Liabilities (always balances)</li>
+  <li>Every transaction has a debit and a credit entry</li>
+  <li>Debits increase assets and expenses</li>
+  <li>Credits increase liabilities, capital, and revenue</li>
+  <li>Double entry ensures the accounting equation remains balanced</li>
+</ul>`,
+    estimatedReadingTime: 25,
+    createdAt: new Date('2026-07-20'),
+  },
+  {
+    id: 'acc-ch-2',
+    bookId: 'lgcse-accounting-workbook',
+    title: 'Books of Original Entry and Ledger Accounts',
+    slug: 'books-of-original-entry-and-ledger-accounts',
+    chapterNumber: 2,
+    content: `<h1>CHAPTER 2: Books of Original Entry and Ledger Accounts</h1>
+
+<blockquote>
+  <strong>Chapter Objectives:</strong><br />
+  By the end of this chapter, you should be able to record transactions in books of original entry, post to ledger accounts, and balance off accounts correctly.
+</blockquote>
+
+<h2>2.1 Books of Original Entry</h2>
+
+<p>Books of original entry (also called journals or day books) are where transactions are first recorded before being posted to the ledger.</p>
+
+<h3>The Main Books of Original Entry</h3>
+
+<div class="overflow-x-auto my-6">
+<table class="w-full text-sm border-collapse">
+<thead>
+<tr class="bg-emerald-100 dark:bg-emerald-900/40">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">Book of Original Entry</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">Transactions Recorded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Sales Journal</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Credit sales of goods</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Purchases Journal</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Credit purchases of goods</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Returns Inwards Journal</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Goods returned by customers</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Returns Outwards Journal</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Goods returned to suppliers</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Cash Book</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Cash and bank transactions</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">General Journal</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Non-regular transactions (e.g., correction of errors, purchases of fixed assets on credit)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>2.1.1 Sales Journal</h3>
+
+<p>The Sales Journal records credit sales of goods. For each transaction, record the date, customer name, invoice number, and amount.</p>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Example 2.1</h4>
+<p class="text-emerald-700 dark:text-emerald-300">Record the following credit sales in the Sales Journal:</p>
+<table class="w-full text-sm border-collapse my-2">
+<thead>
+<tr class="bg-emerald-100 dark:bg-emerald-900/40">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Date</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Customer</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Invoice No.</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Amount (M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">July 1</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">T. Mokoena</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">001</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">8,000</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">July 5</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">M. Lebona</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">002</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">12,000</td>
+</tr>
+<tr class="font-bold">
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1" colspan="3">Total</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">20,000</td>
+</tr>
+</tbody>
+</table>
+<p class="mt-2"><strong>Posting:</strong> Debit T. Mokoena M8,000 and M. Lebona M12,000 in the Sales Ledger. Credit Sales Account M20,000.</p>
+</div>
+
+<h3>2.1.2 Purchases Journal</h3>
+
+<p>The Purchases Journal records credit purchases of goods for resale.</p>
+
+<h3>2.1.3 Returns Journals</h3>
+
+<p><strong>Returns Inwards (Sales Returns):</strong> Goods returned by customers. Entered in the Returns Inwards Journal.<br />
+<strong>Returns Outwards (Purchases Returns):</strong> Goods returned to suppliers. Entered in the Returns Outwards Journal.</p>
+
+<h3>2.1.4 The Cash Book</h3>
+
+<p>The Cash Book records all cash and bank transactions. It serves as both a book of original entry and a ledger account for cash and bank.</p>
+
+<h4>Format of a Two-Column Cash Book</h4>
+
+<div class="overflow-x-auto my-6">
+<table class="w-full text-sm border-collapse">
+<thead>
+<tr class="bg-emerald-100 dark:bg-emerald-900/40">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1" colspan="4">Dr (Debit) Side</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1" colspan="4">Cr (Credit) Side</th>
+</tr>
+<tr class="bg-emerald-50 dark:bg-emerald-900/20">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Date</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Details</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Cash (M)</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Bank (M)</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Date</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Details</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Cash (M)</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Bank (M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1" colspan="8" class="text-center text-gray-400 italic">The debit side records receipts (money in); the credit side records payments (money out).</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Example 2.2</h4>
+<p class="text-emerald-700 dark:text-emerald-300">Record the following in a two-column cash book and balance it off:</p>
+<p class="text-emerald-700 dark:text-emerald-300">July 1: Cash balance M10,000, Bank balance M25,000<br />
+July 3: Paid rent by cheque M3,000<br />
+July 5: Received cash from debtor M. Moleko M4,000<br />
+July 8: Paid creditors by cheque M6,000<br />
+July 10: Owner deposited cash M5,000 into bank</p>
+</div>
+
+<h2>2.2 Ledger Accounts</h2>
+
+<p>The ledger is the main book of accounts where all transactions are posted from the books of original entry. Each account has a debit (left) side and a credit (right) side.</p>
+
+<h3>Format of a Ledger Account</h3>
+
+<div class="overflow-x-auto my-6">
+<table class="w-full text-sm border-collapse">
+<thead>
+<tr class="bg-emerald-100 dark:bg-emerald-900/40">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1" colspan="4">Dr (Debit)</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1" colspan="4">Cr (Credit)</th>
+</tr>
+<tr class="bg-emerald-50 dark:bg-emerald-900/20">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Date</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Details</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Folio</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Amount (M)</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Date</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Details</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Folio</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Amount (M)</th>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>Balancing Off an Account</h3>
+
+<ol>
+  <li>Total both sides of the account</li>
+  <li>Find the difference (the larger total minus the smaller total)</li>
+  <li>Enter the difference on the smaller side as "Balance c/d" (carried down)</li>
+  <li>Enter the same amount on the opposite side below as "Balance b/d" (brought down)</li>
+</ol>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Example 2.3</h4>
+<p class="text-emerald-700 dark:text-emerald-300">Post the following to the Cash Account and balance it off:</p>
+<p class="text-emerald-700 dark:text-emerald-300">July 1: Capital introduced M50,000<br />
+July 5: Purchased goods for cash M12,000<br />
+July 10: Sold goods for cash M18,000<br />
+July 15: Paid wages M4,000</p>
+</div>
+
+<h2>2.3 Posting from Journals to Ledger</h2>
+
+<p>The process of transferring entries from books of original entry to ledger accounts is called <strong>posting</strong>.</p>
+
+<h3>Steps for Posting:</h3>
+<ol>
+  <li>Identify the accounts to be debited and credited from the journal entry</li>
+  <li>Enter the date of the transaction in each ledger account</li>
+  <li>Record the amount on the correct side (Dr or Cr)</li>
+  <li>Enter a cross-reference (folio) to the journal page</li>
+  <li>Enter a brief description (narrative) of the transaction</li>
+</ol>
+
+<h2>Practice Exercises</h2>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50/50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/10">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Exercise 2.1</h4>
+<ol class="list-decimal list-inside space-y-2 text-emerald-700 dark:text-emerald-300">
+  <li>Name four books of original entry and state what each is used for.</li>
+  <li>Record the following credit sales in a Sales Journal:<br />
+    Jan 3: Sold goods to P. Nkosi M6,000 (Invoice 101)<br />
+    Jan 7: Sold goods to R. Motaung M9,000 (Invoice 102)<br />
+    Jan 12: Sold goods to S. Khumalo M4,500 (Invoice 103)</li>
+  <li>What is the purpose of posting to the ledger?</li>
+  <li>Explain the difference between the Sales Journal and the Sales Account.</li>
+</ol>
+</div>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50/50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/10">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Exercise 2.2</h4>
+<ol class="list-decimal list-inside space-y-2 text-emerald-700 dark:text-emerald-300">
+  <li>Open the following accounts in the ledger and record the transactions. Balance off each account.<br />
+    (a) Cash Account: Received capital M80,000; paid rent M5,000; received sales M12,000; paid wages M3,500.<br />
+    (b) Purchases Account: Bought goods on credit from T. Moeketsi M15,000; bought goods on credit from L. Ramafole M8,000.<br />
+    (c) Sales Account: Sold goods on credit to K. Mphuthi M10,000; sold goods on credit to T. Rantao M7,500.</li>
+  <li>A business had the following bank transactions. Record them in a Cash Book (bank columns only):<br />
+    Balance at bank M30,000; paid creditors M8,000; received from debtors M12,000; paid electricity M2,000.</li>
+</ol>
+</div>
+
+<h2>Key Points to Remember</h2>
+<ul>
+  <li>Books of original entry are where transactions are first recorded</li>
+  <li>The ledger is the main book of accounts</li>
+  <li>Posting transfers entries from journals to the ledger</li>
+  <li>Balancing off gives the closing balance of an account</li>
+  <li>The Cash Book is both a book of original entry and a ledger account</li>
+</ul>`,
+    estimatedReadingTime: 30,
+    createdAt: new Date('2026-07-20'),
+  },
+  {
+    id: 'acc-ch-3',
+    bookId: 'lgcse-accounting-workbook',
+    title: 'Trial Balance and Financial Statements',
+    slug: 'trial-balance-and-financial-statements',
+    chapterNumber: 3,
+    content: `<h1>CHAPTER 3: Trial Balance and Financial Statements</h1>
+
+<blockquote>
+  <strong>Chapter Objectives:</strong><br />
+  By the end of this chapter, you should be able to prepare a trial balance, identify and correct errors, and prepare basic financial statements including the Income Statement and Balance Sheet.
+</blockquote>
+
+<h2>3.1 The Trial Balance</h2>
+
+<p>A trial balance is a statement of all ledger account balances at a particular date. It is used to check the arithmetical accuracy of the double entry records.</p>
+
+<h3>Rules for Preparing a Trial Balance</h3>
+<ul>
+  <li>List all accounts with a <strong>debit balance</strong> on the debit side</li>
+  <li>List all accounts with a <strong>credit balance</strong> on the credit side</li>
+  <li>Total both sides — they should be equal</li>
+</ul>
+
+<h3>Which Accounts Have Debit Balances?</h3>
+<ul>
+  <li>Assets (e.g., Cash, Bank, Equipment, Debtors, Premises)</li>
+  <li>Expenses (e.g., Rent, Wages, Electricity, Purchases)</li>
+  <li>Drawings</li>
+</ul>
+
+<h3>Which Accounts Have Credit Balances?</h3>
+<ul>
+  <li>Liabilities (e.g., Creditors, Loan, Bank Overdraft)</li>
+  <li>Capital</li>
+  <li>Revenue (e.g., Sales, Commission Received, Rent Income)</li>
+</ul>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Example 3.1</h4>
+<p class="text-emerald-700 dark:text-emerald-300">From the following balances, prepare a trial balance as at 31 December 2025:</p>
+<table class="w-full text-sm border-collapse my-2">
+<thead>
+<tr class="bg-emerald-100 dark:bg-emerald-900/40">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Account</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Amount (M)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Capital</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">100,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Equipment</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">35,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Debtors</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">18,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Creditors</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">12,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Sales</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">250,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Purchases</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">150,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Rent</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">12,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Wages</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">24,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Cash at Bank</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">15,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Drawings</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">8,000</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>3.2 Errors and Their Correction</h2>
+
+<h3>Types of Errors</h3>
+
+<div class="overflow-x-auto my-6">
+<table class="w-full text-sm border-collapse">
+<thead>
+<tr class="bg-emerald-100 dark:bg-emerald-900/40">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">Error Type</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">Description</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">Affects Trial Balance?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Error of omission</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Transaction completely omitted from books</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">No</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Error of commission</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Correct amount, wrong person's account</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">No</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Error of principle</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Wrong class of account (e.g., expense treated as asset)</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">No</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Reversal of entry</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Debit and credit sides reversed</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">No</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Compensating error</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Two errors cancel each other out</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">No</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">One-sided error</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Only one side of entry recorded</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Yes</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Transposition error</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Digits written in wrong order (e.g., M54 written as M45)</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Yes (difference divisible by 9)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h2>3.3 Financial Statements</h2>
+
+<p>At the end of an accounting period, businesses prepare financial statements to show their performance and financial position.</p>
+
+<h3>Income Statement (Profit and Loss Account)</h3>
+<p>The Income Statement calculates the net profit or loss for the period:</p>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<p class="font-semibold text-emerald-800 dark:text-emerald-200">Structure of Income Statement:</p>
+<pre class="text-sm text-emerald-700 dark:text-emerald-300 font-mono">
+Sales (Revenue)                          XXX
+Less: Cost of Sales                     (XXX)
+<strong>Gross Profit</strong>                            XXX
+Less: Expenses                          (XXX)
+<strong>Net Profit</strong>                              XXX
+</pre>
+</div>
+
+<p><strong>Cost of Sales = Opening Inventory + Purchases − Closing Inventory</strong></p>
+
+<h3>Balance Sheet (Statement of Financial Position)</h3>
+<p>The Balance Sheet shows the financial position at a specific date:</p>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<p class="font-semibold text-emerald-800 dark:text-emerald-200">Structure of Balance Sheet:</p>
+<pre class="text-sm text-emerald-700 dark:text-emerald-300 font-mono">
+<strong>ASSETS</strong>
+Non-Current Assets:  Equipment, Premises, Vehicles    XXX
+Current Assets:      Inventory, Debtors, Cash/Bank    XXX
+Total Assets                                          XXX
+
+<strong>CAPITAL AND LIABILITIES</strong>
+Capital:             Opening Capital + Net Profit     XXX
+                     Less: Drawings                   (XXX)
+Current Liabilities: Creditors, Loan (short-term)     XXX
+Total Capital and Liabilities                         XXX
+</pre>
+</div>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Example 3.2</h4>
+<p class="text-emerald-700 dark:text-emerald-300">Using the trial balance from Example 3.1, prepare the Income Statement for the year ended 31 December 2025 and the Balance Sheet as at that date. (Assume closing inventory is M20,000.)</p>
+</div>
+
+<h2>Practice Exercises</h2>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50/50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/10">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Exercise 3.1</h4>
+<ol class="list-decimal list-inside space-y-2 text-emerald-700 dark:text-emerald-300">
+  <li>What is a trial balance and why is it prepared?</li>
+  <li>Identify whether each account has a debit or credit balance:<br />
+    (a) Sales &nbsp; (b) Rent &nbsp; (c) Creditors &nbsp; (d) Equipment &nbsp; (e) Drawings &nbsp; (f) Capital</li>
+  <li>The following balances were extracted from the books of T. Nkosi. Prepare a trial balance:<br />
+    Capital M60,000, Sales M120,000, Purchases M80,000, Rent M6,000, Wages M15,000, Equipment M25,000, Debtors M12,000, Creditors M8,000, Bank M5,000, Drawings M4,000.</li>
+</ol>
+</div>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50/50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/10">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Exercise 3.2</h4>
+<ol class="list-decimal list-inside space-y-2 text-emerald-700 dark:text-emerald-300">
+  <li>Using the trial balance from Exercise 3.1, prepare the Income Statement and Balance Sheet. Assume closing inventory is M12,000 and there were no other adjustments.</li>
+  <li>State whether each error affects the trial balance and explain the correction needed:<br />
+    (a) A sale of M5,000 was entered only in the Sales Account, not in the customer's account.<br />
+    (b) Rent paid of M2,000 was entered on the credit side of the Rent Account.<br />
+    (c) Wages paid M3,500 was entered as M5,300 in the Wages Account.</li>
+</ol>
+</div>
+
+<h2>Key Points to Remember</h2>
+<ul>
+  <li>A trial balance checks the arithmetical accuracy of double entry</li>
+  <li>Total debits must equal total credits in a trial balance</li>
+  <li>Errors can be classified by type and effect</li>
+  <li>The Income Statement shows profit or loss over a period</li>
+  <li>The Balance Sheet shows assets, capital, and liabilities at a point in time</li>
+  <li>Assets = Capital + Liabilities (the accounting equation) must always hold</li>
+</ul>`,
+    estimatedReadingTime: 30,
+    createdAt: new Date('2026-07-20'),
+  },
+  {
+    id: 'acc-ch-4',
+    bookId: 'lgcse-accounting-workbook',
+    title: 'Bank Reconciliation and Control Accounts',
+    slug: 'bank-reconciliation-and-control-accounts',
+    chapterNumber: 4,
+    content: `<h1>CHAPTER 4: Bank Reconciliation and Control Accounts</h1>
+
+<blockquote>
+  <strong>Chapter Objectives:</strong><br />
+  By the end of this chapter, you should be able to prepare a bank reconciliation statement, explain the purpose of control accounts, and prepare sales ledger and purchases ledger control accounts.
+</blockquote>
+
+<h2>4.1 Bank Reconciliation</h2>
+
+<p>A bank reconciliation statement compares the cash book bank balance with the bank statement balance and explains any differences.</p>
+
+<h3>Why Do Differences Occur?</h3>
+<ul>
+  <li><strong>Unpresented cheques</strong> — Cheques issued but not yet presented to the bank for payment</li>
+  <li><strong>Uncredited deposits</strong> — Deposits made but not yet recorded by the bank</li>
+  <li><strong>Bank charges</strong> — Charges deducted by the bank not yet recorded in the cash book</li>
+  <li><strong>Standing orders / Direct debits</strong> — Automatic payments not yet recorded</li>
+  <li><strong>Dishonoured cheques</strong> — Cheques deposited that have been returned unpaid</li>
+  <li><strong>Errors</strong> — Mistakes in either the cash book or the bank statement</li>
+</ul>
+
+<h3>Steps to Prepare a Bank Reconciliation Statement</h3>
+
+<ol>
+  <li><strong>Update the Cash Book:</strong> Record any items from the bank statement not yet in the cash book (bank charges, standing orders, direct credits, etc.)</li>
+  <li><strong>Calculate the corrected cash book balance</strong></li>
+  <li><strong>Prepare the reconciliation statement</strong> starting from the bank statement balance or the corrected cash book balance</li>
+</ol>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Example 4.1</h4>
+<p class="text-emerald-700 dark:text-emerald-300">The cash book of M. Mokoena shows a debit balance of M24,500 at 31 March 2026. The bank statement shows a credit balance of M28,200. On investigation, you find:</p>
+<ol class="text-emerald-700 dark:text-emerald-300">
+  <li>Cheques issued but not presented: M5,000</li>
+  <li>Deposits not yet credited by the bank: M3,200</li>
+  <li>Bank charges of M400 not recorded in the cash book</li>
+  <li>A standing order for insurance M700 not recorded in the cash book</li>
+</ol>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p class="font-semibold mt-2">Step 1: Update the Cash Book</p>
+<table class="w-full text-sm border-collapse">
+<tr><td class="border p-1">Balance b/d</td><td class="border p-1">M24,500</td></tr>
+<tr><td class="border p-1">Less: Bank charges (M400)</td><td class="border p-1"></td></tr>
+<tr><td class="border p-1">Less: Insurance standing order (M700)</td><td class="border p-1"></td></tr>
+<tr class="font-bold"><td class="border p-1">Adjusted balance</td><td class="border p-1">M23,400</td></tr>
+</table>
+<p class="font-semibold mt-2">Step 2: Bank Reconciliation Statement as at 31 March 2026</p>
+<table class="w-full text-sm border-collapse">
+<tr><td class="border p-1">Balance per bank statement</td><td class="border p-1">M28,200</td></tr>
+<tr><td class="border p-1">Less: Unpresented cheques</td><td class="border p-1">(M5,000)</td></tr>
+<tr><td class="border p-1">Add: Uncredited deposits</td><td class="border p-1">M3,200</td></tr>
+<tr><td class="border p-1">&nbsp;</td><td class="border p-1">&nbsp;</td></tr>
+<tr><td class="border p-1">Less: Items on bank statement not yet in cash book:</td><td class="border p-1"></td></tr>
+<tr><td class="border p-1">&nbsp;&nbsp;Bank charges</td><td class="border p-1">(M400)</td></tr>
+<tr><td class="border p-1">&nbsp;&nbsp;Insurance standing order</td><td class="border p-1">(M700)</td></tr>
+<tr><td class="border p-1">&nbsp;&nbsp;Corrected items total</td><td class="border p-1">(M1,100)</td></tr>
+<tr class="font-bold"><td class="border p-1">Corrected balance per bank</td><td class="border p-1">M23,400</td></tr>
+</table>
+<p>This matches the corrected cash book balance.</p>
+</div>
+
+<h2>4.2 Control Accounts</h2>
+
+<p>Control accounts are summary accounts in the general ledger that show the total of all individual accounts in a subsidiary ledger.</p>
+
+<h3>Types of Control Accounts</h3>
+<ul>
+  <li><strong>Sales Ledger Control Account (SLCA)</strong> — Total of all debtors (individual customer accounts)</li>
+  <li><strong>Purchases Ledger Control Account (PLCA)</strong> — Total of all creditors (individual supplier accounts)</li>
+</ul>
+
+<h3>Structure of Sales Ledger Control Account</h3>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<table class="w-full text-sm border-collapse">
+<thead>
+<tr class="bg-emerald-100 dark:bg-emerald-900/40">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1" colspan="4">Dr (Debit) — SLCA</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1" colspan="4">Cr (Credit) — SLCA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1" colspan="4">
+    <strong>Debit entries:</strong><br />
+    • Balance b/d (opening debtors)<br />
+    • Credit sales (total from Sales Journal)<br />
+    • Dishonoured cheques<br />
+    • Interest charged on overdue accounts
+  </td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1" colspan="4">
+    <strong>Credit entries:</strong><br />
+    • Cash/Bank received from debtors<br />
+    • Returns inwards (sales returns)<br />
+    • Discount allowed<br />
+    • Bad debts written off<br />
+    • Balance c/d (closing debtors)
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Example 4.2 — Sales Ledger Control Account</h4>
+<p class="text-emerald-700 dark:text-emerald-300">From the following information, prepare the Sales Ledger Control Account for April 2026:</p>
+<table class="w-full text-sm border-collapse my-2">
+<thead>
+<tr class="bg-emerald-100 dark:bg-emerald-900/40">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Detail</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Amount (M)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Debtors at 1 April 2026</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">45,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Credit sales</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">120,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Cash received from debtors</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">98,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Returns inwards</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">4,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Discount allowed</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">2,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Bad debts written off</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">1,500</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Example 4.3 — Purchases Ledger Control Account</h4>
+<p class="text-emerald-700 dark:text-emerald-300">From the following information, prepare the Purchases Ledger Control Account for April 2026:</p>
+<table class="w-full text-sm border-collapse my-2">
+<thead>
+<tr class="bg-emerald-100 dark:bg-emerald-900/40">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Detail</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Amount (M)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Creditors at 1 April 2026</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">32,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Credit purchases</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">85,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Payments to creditors</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">70,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Returns outwards</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">3,000</td></tr>
+<tr><td class="border border-emerald-200 dark:border-emerald-800 p-1">Discount received</td><td class="border border-emerald-200 dark:border-emerald-800 p-1">1,200</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Practice Exercises</h2>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50/50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/10">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Exercise 4.1</h4>
+<ol class="list-decimal list-inside space-y-2 text-emerald-700 dark:text-emerald-300">
+  <li>Explain the purpose of a bank reconciliation statement.</li>
+  <li>The cash book of P. Moeketsi shows a debit balance of M15,000. The bank statement shows a credit balance of M18,500. Items causing the difference:<br />
+    — Unpresented cheques: M6,000<br />
+    — Uncredited deposits: M2,000<br />
+    — Bank charges: M350 (not in cash book)<br />
+    — Direct debit for insurance: M850 (not in cash book)<br />
+    Prepare the updated cash book and the bank reconciliation statement.</li>
+</ol>
+</div>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50/50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/10">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Exercise 4.2</h4>
+<ol class="list-decimal list-inside space-y-2 text-emerald-700 dark:text-emerald-300">
+  <li>What is the purpose of a control account?</li>
+  <li>From the following, prepare the Sales Ledger Control Account:<br />
+    Debtors at 1 May: M28,000; Credit sales: M95,000; Cash from debtors: M82,000; Returns inwards: M2,500; Discount allowed: M1,800; Bad debts: M1,200.</li>
+  <li>From the following, prepare the Purchases Ledger Control Account:<br />
+    Creditors at 1 May: M22,000; Credit purchases: M65,000; Payments: M58,000; Returns outwards: M2,000; Discount received: M900.</li>
+</ol>
+</div>
+
+<h2>Key Points to Remember</h2>
+<ul>
+  <li>Bank reconciliation explains differences between the cash book and bank statement</li>
+  <li>Always update the cash book first with items from the bank statement</li>
+  <li>Control accounts provide a check on the accuracy of subsidiary ledgers</li>
+  <li>SLCA = total of all debtors (debit balances in sales ledger)</li>
+  <li>PLCA = total of all creditors (credit balances in purchases ledger)</li>
+</ul>`,
+    estimatedReadingTime: 28,
+    createdAt: new Date('2026-07-20'),
+  },
+  {
+    id: 'acc-ch-5',
+    bookId: 'lgcse-accounting-workbook',
+    title: 'Depreciation, Bad Debts, and Correction of Errors',
+    slug: 'depreciation-bad-debts-and-correction-of-errors',
+    chapterNumber: 5,
+    content: `<h1>CHAPTER 5: Depreciation, Bad Debts, and Correction of Errors</h1>
+
+<blockquote>
+  <strong>Chapter Objectives:</strong><br />
+  By the end of this chapter, you should be able to calculate depreciation using different methods, account for bad debts and the allowance for doubtful debts, and correct accounting errors using journal entries.
+</blockquote>
+
+<h2>5.1 Depreciation</h2>
+
+<p>Depreciation is the reduction in value of a non-current asset over its useful life due to wear and tear, obsolescence, or the passage of time.</p>
+
+<h3>Causes of Depreciation</h3>
+<ul>
+  <li><strong>Wear and tear</strong> — Physical deterioration through use</li>
+  <li><strong>Obsolescence</strong> — Becoming outdated due to技术进步</li>
+  <li><strong>Passage of time</strong> — Some assets lose value simply with time (e.g., leases)</li>
+  <li><strong>Depletion</strong> — Using up natural resources (e.g., mines, quarries)</li>
+</ul>
+
+<h3>Methods of Calculating Depreciation</h3>
+
+<h4>Method 1: Straight Line Method (Equal Installment)</h4>
+<p>Depreciation is the same amount each year.</p>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-3 my-4 dark:border-emerald-800 dark:bg-emerald-900/20">
+<p class="font-semibold text-emerald-800 dark:text-emerald-200">Formula:</p>
+<p class="text-emerald-700 dark:text-emerald-300 font-mono">
+Annual Depreciation = (Cost − Residual Value) / Useful Life (years)
+</p>
+<p class="text-emerald-700 dark:text-emerald-300 font-mono mt-1">
+Depreciation Rate = (Annual Depreciation / Cost) × 100%
+</p>
+</div>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Example 5.1</h4>
+<p class="text-emerald-700 dark:text-emerald-300">Equipment costing M100,000 has an estimated useful life of 5 years and a residual value of M10,000. Calculate depreciation using the straight line method.</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>Annual Depreciation = (100,000 − 10,000) / 5 = <strong>M18,000 per year</strong></p>
+<p>Depreciation Rate = (18,000 / 100,000) × 100 = <strong>18% per year</strong></p>
+</div>
+
+<h4>Method 2: Reducing Balance Method (Diminishing Balance)</h4>
+<p>Depreciation is calculated as a fixed percentage of the <strong>book value</strong> (cost minus accumulated depreciation) each year.</p>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-3 my-4 dark:border-emerald-800 dark:bg-emerald-900/20">
+<p class="font-semibold text-emerald-800 dark:text-emerald-200">Formula:</p>
+<p class="text-emerald-700 dark:text-emerald-300 font-mono">
+Annual Depreciation = Book Value × Depreciation Rate%
+</p>
+</div>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Example 5.2</h4>
+<p class="text-emerald-700 dark:text-emerald-300">A vehicle costing M200,000 is depreciated at 20% per annum using the reducing balance method. Calculate the depreciation for each of the first three years.</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<table class="w-full text-sm border-collapse mt-2">
+<thead>
+<tr class="bg-emerald-100 dark:bg-emerald-900/40">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Year</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Book Value at Start</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Depreciation (20%)</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Book Value at End</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">1</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">200,000</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">40,000</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">160,000</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">2</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">160,000</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">32,000</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">128,000</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">3</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">128,000</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">25,600</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">102,400</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>Accounting for Depreciation</h3>
+
+<p>The double entry for depreciation is:</p>
+<ul>
+  <li><strong>Debit:</strong> Depreciation Expense (Income Statement)</li>
+  <li><strong>Credit:</strong> Accumulated Depreciation (Balance Sheet — deducted from the asset)</li>
+</ul>
+
+<h2>5.2 Bad Debts and Allowance for Doubtful Debts</h2>
+
+<h3>Bad Debts</h3>
+<p>When a customer is unable to pay their debt, the amount is written off as a bad debt.</p>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-3 my-4 dark:border-emerald-800 dark:bg-emerald-900/20">
+<p class="font-semibold text-emerald-800 dark:text-emerald-200">Double Entry for Bad Debts:</p>
+<p class="text-emerald-700 dark:text-emerald-300">
+<strong>Debit:</strong> Bad Debts Account (Expense)<br />
+<strong>Credit:</strong> Debtor's Account (remove the debtor)
+</p>
+</div>
+
+<h3>Allowance for Doubtful Debts</h3>
+<p>Instead of waiting for debts to become definitely bad, businesses create an allowance for doubtful debts — an estimate of debts that may not be collected.</p>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-3 my-4 dark:border-emerald-800 dark:bg-emerald-900/20">
+<p class="font-semibold text-emerald-800 dark:text-emerald-200">Double Entry for Allowance for Doubtful Debts:</p>
+<p class="text-emerald-700 dark:text-emerald-300">
+<em>When creating/increasing the allowance:</em><br />
+<strong>Debit:</strong> Doubtful Debts Expense<br />
+<strong>Credit:</strong> Allowance for Doubtful Debts (Balance Sheet)
+</p>
+<p class="text-emerald-700 dark:text-emerald-300 mt-2">
+<em>When decreasing the allowance:</em><br />
+<strong>Debit:</strong> Allowance for Doubtful Debts<br />
+<strong>Credit:</strong> Doubtful Debts Expense (reduction in expense)
+</p>
+</div>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Example 5.3</h4>
+<p class="text-emerald-700 dark:text-emerald-300">A business has debtors of M50,000 at 31 December 2025. It is estimated that 5% of debtors may be doubtful. The allowance for doubtful debts last year was M2,000.</p>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>Required allowance = 5% × M50,000 = M2,500<br />
+Existing allowance = M2,000<br />
+Increase required = M500</p>
+<p><strong>Journal Entry:</strong></p>
+<table class="w-full text-sm border-collapse mt-1">
+<tr><td class="border p-1">Dr Doubtful Debts Expense</td><td class="border p-1">M500</td></tr>
+<tr><td class="border p-1">Cr Allowance for Doubtful Debts</td><td class="border p-1">M500</td></tr>
+</table>
+<p>Balance Sheet extract: Debtors M50,000 − Allowance M2,500 = <strong>Net Debtors M47,500</strong></p>
+</div>
+
+<h2>5.3 Correction of Errors</h2>
+
+<p>Errors in accounting records are corrected using <strong>journal entries</strong> or through a <strong>Suspense Account</strong>.</p>
+
+<h3>The Suspense Account</h3>
+<p>When a trial balance does not balance, the difference is placed in a Suspense Account. As errors are found and corrected, the Suspense Account is cleared.</p>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Example 5.4 — Correcting Errors</h4>
+<p class="text-emerald-700 dark:text-emerald-300">Correct the following errors using journal entries:</p>
+<ol class="text-emerald-700 dark:text-emerald-300">
+  <li>A sale of M5,000 to T. Khosi was correctly recorded in the Sales Account but was not entered in T. Khosi's account.</li>
+  <li>Rent paid of M3,000 was debited to the Rent Account but credited to the Bank Account (i.e., the credit entry was omitted).</li>
+  <li>Equipment repairs of M2,500 was incorrectly debited to the Equipment Account.</li>
+</ol>
+<p class="mt-2"><strong>Solution:</strong></p>
+<table class="w-full text-sm border-collapse mt-2">
+<thead>
+<tr class="bg-emerald-100 dark:bg-emerald-900/40">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">No.</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Account Debited</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Account Credited</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-1">Amount (M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">1</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">T. Khosi (Debtor)</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">Suspense (or Sales — if not yet recorded)</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">5,000</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">2</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">Bank</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">Suspense</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">3,000</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">3</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">Repairs (Expense)</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">Equipment</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-1">2,500</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h2>Practice Exercises</h2>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50/50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/10">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Exercise 5.1</h4>
+<ol class="list-decimal list-inside space-y-2 text-emerald-700 dark:text-emerald-300">
+  <li>State two causes of depreciation.</li>
+  <li>Calculate annual depreciation using straight line method:<br />
+    Cost M150,000, Residual Value M15,000, Useful Life 6 years.</li>
+  <li>A machine costing M80,000 is depreciated at 25% per annum using the reducing balance method. Calculate the book value after 3 years.</li>
+  <li>Record the double entry for annual depreciation of M12,000 on equipment.</li>
+</ol>
+</div>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50/50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/10">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Exercise 5.2</h4>
+<ol class="list-decimal list-inside space-y-2 text-emerald-700 dark:text-emerald-300">
+  <li>A business has debtors of M60,000. An allowance of 5% for doubtful debts is to be created. The existing allowance is M2,000. Calculate the increase or decrease and show the journal entry.</li>
+  <li>A debtor owing M1,500 is declared bankrupt. Write off the amount as a bad debt.</li>
+  <li>Correct the following errors using journal entries:<br />
+    (a) Discount allowed M400 was debited to the Discount Received Account.<br />
+    (b) Wages paid M6,000 was debited to the Wages Account but credited to the Bank Account (credit omitted).<br />
+    (c) A purchase of office equipment for M8,000 was debited to the Purchases Account.</li>
+</ol>
+</div>
+
+<h2>Key Points to Remember</h2>
+<ul>
+  <li>Depreciation allocates the cost of a non-current asset over its useful life</li>
+  <li>Straight line: equal annual amounts; Reducing balance: decreasing annual amounts</li>
+  <li>Bad debts are actual losses; Allowance for doubtful debts is an estimate</li>
+  <li>Errors can be corrected through journal entries</li>
+  <li>The Suspense Account holds the trial balance difference while errors are investigated</li>
+</ul>`,
+    estimatedReadingTime: 28,
+    createdAt: new Date('2026-07-20'),
+  },
+  {
+    id: 'acc-ch-6',
+    bookId: 'lgcse-accounting-workbook',
+    title: 'Partnership Accounts and Ratio Analysis',
+    slug: 'partnership-accounts-and-ratio-analysis',
+    chapterNumber: 6,
+    content: `<h1>CHAPTER 6: Partnership Accounts and Ratio Analysis</h1>
+
+<blockquote>
+  <strong>Chapter Objectives:</strong><br />
+  By the end of this chapter, you should be able to prepare partnership accounts including capital and current accounts, profit appropriation, and calculate and interpret key financial ratios.
+</blockquote>
+
+<h2>6.1 Partnership Accounts</h2>
+
+<p>A partnership is a business owned by two or more people (usually 2 to 20 partners) who share profits and losses according to a partnership agreement.</p>
+
+<h3>Features of a Partnership</h3>
+<ul>
+  <li>Shared ownership and control</li>
+  <li>Shared profits and losses</li>
+  <li>Unlimited liability (unless a limited liability partnership)</li>
+  <li>Partners contribute capital</li>
+  <li>Partners may receive salaries, interest on capital, and share residual profits</li>
+</ul>
+
+<h3>Partners' Capital and Current Accounts</h3>
+
+<p><strong>Capital Account:</strong> Records the fixed amount each partner contributes. This remains unchanged unless additional capital is introduced or permanently withdrawn.</p>
+
+<p><strong>Current Account:</strong> Records all other transactions with the partner:<br />
+<em>Credit side:</em> Salary, Interest on Capital, Share of Profits<br />
+<em>Debit side:</em> Drawings, Interest on Drawings</p>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Example 6.1</h4>
+<p class="text-emerald-700 dark:text-emerald-300">P. Mokoena and T. Radebe are partners sharing profits in the ratio 3:2. The following information is available for the year ended 31 December 2025:</p>
+<table class="w-full text-sm border-collapse my-2">
+<tbody>
+<tr><td class="border p-1">Net profit for the year</td><td class="border p-1">M100,000</td></tr>
+<tr><td class="border p-1">Partner salaries: Mokoena M12,000, Radebe M8,000</td><td class="border p-1"></td></tr>
+<tr><td class="border p-1">Interest on capital: 5% per annum</td><td class="border p-1"></td></tr>
+<tr><td class="border p-1">Capital accounts: Mokoena M100,000, Radebe M80,000</td><td class="border p-1"></td></tr>
+<tr><td class="border p-1">Drawings: Mokoena M30,000, Radebe M20,000</td><td class="border p-1"></td></tr>
+</tbody>
+</table>
+<p class="mt-2"><strong>Solution — Profit Appropriation Statement:</strong></p>
+<table class="w-full text-sm border-collapse mt-2">
+<tr><td class="border p-1">Net Profit</td><td class="border p-1"></td><td class="border p-1">M100,000</td></tr>
+<tr><td class="border p-1">Less: Partner Salaries (12,000 + 8,000)</td><td class="border p-1">(M20,000)</td><td class="border p-1"></td></tr>
+<tr><td class="border p-1">Less: Interest on Capital (5,000 + 4,000)</td><td class="border p-1">(M9,000)</td><td class="border p-1"></td></tr>
+<tr><td class="border p-1">Residual Profit to be shared</td><td class="border p-1"></td><td class="border p-1">M71,000</td></tr>
+<tr><td class="border p-1">Mokoena's share (3/5 × 71,000)</td><td class="border p-1"></td><td class="border p-1">M42,600</td></tr>
+<tr><td class="border p-1">Radebe's share (2/5 × 71,000)</td><td class="border p-1"></td><td class="border p-1">M28,400</td></tr>
+</table>
+</div>
+
+<h3>Profit Appropriation Account</h3>
+<p>The Profit Appropriation Account shows how the net profit is distributed among the partners.</p>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<p class="font-semibold text-emerald-800 dark:text-emerald-200">Format:</p>
+<pre class="text-sm text-emerald-700 dark:text-emerald-300 font-mono">
+Net Profit for the year                                  XXX
+Less: Partner Salaries                                  (XXX)
+Less: Interest on Capital                               (XXX)
+Less: Interest on Drawings (added back)                 XXX
+<strong>Residual Profit to be shared</strong>                          XXX
+  Partner A's share (ratio)                             XXX
+  Partner B's share (ratio)                             XXX
+</pre>
+</div>
+
+<h2>6.2 Ratio Analysis</h2>
+
+<p>Ratio analysis helps evaluate the financial performance and position of a business. Ratios are calculated from financial statements.</p>
+
+<h3>Profitability Ratios</h3>
+
+<table class="w-full text-sm border-collapse my-4">
+<thead>
+<tr class="bg-emerald-100 dark:bg-emerald-900/40">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">Ratio</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">Formula</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Gross Profit Margin</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2 font-mono">(GP / Sales) × 100%</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Profitability of trading</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Net Profit Margin</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2 font-mono">(NP / Sales) × 100%</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Overall profitability</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Return on Capital Employed (ROCE)</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2 font-mono">(NP / Capital) × 100%</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Return on owner's investment</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Liquidity Ratios</h3>
+
+<table class="w-full text-sm border-collapse my-4">
+<thead>
+<tr class="bg-emerald-100 dark:bg-emerald-900/40">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">Ratio</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">Formula</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Current Ratio (Working Capital Ratio)</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2 font-mono">CA / CL</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Ability to pay short-term debts (ideal: 1.5 to 2)</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Quick Ratio (Acid Test)</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2 font-mono">(CA − Inventory) / CL</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Ability to pay without selling inventory (ideal: ~1)</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Efficiency Ratios</h3>
+
+<table class="w-full text-sm border-collapse my-4">
+<thead>
+<tr class="bg-emerald-100 dark:bg-emerald-900/40">
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">Ratio</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">Formula</th>
+  <th class="border border-emerald-200 dark:border-emerald-800 p-2">What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Rate of Inventory Turnover</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2 font-mono">COS / Avg Inventory</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">How quickly inventory is sold</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Debtors Collection Period</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2 font-mono">(Debtors / Credit Sales) × 365</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Average days to collect from debtors</td>
+</tr>
+<tr>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Creditors Payment Period</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2 font-mono">(Creditors / Credit Purchases) × 365</td>
+  <td class="border border-emerald-200 dark:border-emerald-800 p-2">Average days to pay creditors</td>
+</tr>
+</tbody>
+</table>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Example 6.2</h4>
+<p class="text-emerald-700 dark:text-emerald-300">From the following information, calculate: (a) Current Ratio (b) Quick Ratio (c) Gross Profit Margin (d) Net Profit Margin</p>
+<table class="w-full text-sm border-collapse my-2">
+<tbody>
+<tr><td class="border p-1">Sales</td><td class="border p-1">M300,000</td></tr>
+<tr><td class="border p-1">Cost of Sales</td><td class="border p-1">M180,000</td></tr>
+<tr><td class="border p-1">Net Profit</td><td class="border p-1">M45,000</td></tr>
+<tr><td class="border p-1">Current Assets</td><td class="border p-1">M80,000</td></tr>
+<tr><td class="border p-1">Inventory</td><td class="border p-1">M30,000</td></tr>
+<tr><td class="border p-1">Current Liabilities</td><td class="border p-1">M40,000</td></tr>
+</tbody>
+</table>
+<p class="mt-2"><strong>Solution:</strong></p>
+<p>a) Current Ratio = 80,000 / 40,000 = <strong>2:1</strong> (good — strong liquidity)<br />
+b) Quick Ratio = (80,000 − 30,000) / 40,000 = 50,000 / 40,000 = <strong>1.25:1</strong> (acceptable)<br />
+c) Gross Profit Margin = (300,000 − 180,000) / 300,000 × 100 = 120,000 / 300,000 × 100 = <strong>40%</strong><br />
+d) Net Profit Margin = 45,000 / 300,000 × 100 = <strong>15%</strong></p>
+</div>
+
+<h2>Practice Exercises</h2>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50/50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/10">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Exercise 6.1</h4>
+<ol class="list-decimal list-inside space-y-2 text-emerald-700 dark:text-emerald-300">
+  <li>What is a partnership and how does it differ from a sole trader?</li>
+  <li>A and B are partners sharing profits 2:1. Capital: A M120,000, B M80,000. Interest on capital 5%. Partner salaries: A M10,000, B M6,000. Net profit M90,000. Drawings: A M24,000, B M18,000. Prepare the Profit Appropriation Account and the partners' current accounts.</li>
+</ol>
+</div>
+
+<div class="rounded-xl border-2 border-emerald-200 bg-emerald-50/50 p-4 my-6 dark:border-emerald-800 dark:bg-emerald-900/10">
+<h4 class="font-semibold text-emerald-800 dark:text-emerald-200">Exercise 6.2</h4>
+<ol class="list-decimal list-inside space-y-2 text-emerald-700 dark:text-emerald-300">
+  <li>State the formula for each ratio and explain what it measures:<br />
+    (a) Current Ratio &nbsp; (b) Gross Profit Margin &nbsp; (c) Rate of Inventory Turnover</li>
+  <li>From the following data, calculate: Current Ratio, Quick Ratio, Gross Profit Margin, Net Profit Margin, Debtors Collection Period.<br />
+    Sales M500,000 (80% on credit), Cost of Sales M300,000, Net Profit M60,000,<br />
+    Current Assets M120,000 (including Inventory M45,000), Current Liabilities M60,000, Debtors M40,000.</li>
+</ol>
+</div>
+
+<h2>Key Points to Remember</h2>
+<ul>
+  <li>Partnership accounts require capital accounts, current accounts, and profit appropriation</li>
+  <li>Profits are shared according to the partnership agreement</li>
+  <li>Ratio analysis helps interpret financial statements</li>
+  <li>Profitability ratios measure earning power</li>
+  <li>Liquidity ratios measure ability to pay short-term debts</li>
+  <li>Efficiency ratios measure how well resources are used</li>
+</ul>`,
+    estimatedReadingTime: 30,
+    createdAt: new Date('2026-07-20'),
+  },
+];
+
 export const STATIC_BOOK = STATIC_BOOKS[0];
 export const STATIC_CHAPTERS = MATH_CHAPTERS;
 
@@ -1387,5 +2677,6 @@ export function getStaticBookReadingTime(bookId: string): number {
 export function getStaticChapters(bookId: string): Chapter[] {
   if (bookId === 'lgcse-maths-workbook') return MATH_CHAPTERS;
   if (bookId === 'the-mystery-of-god') return MYSTERY_CHAPTERS;
+  if (bookId === 'lgcse-accounting-workbook') return ACCOUNTING_CHAPTERS;
   return [];
 }
