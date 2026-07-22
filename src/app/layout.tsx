@@ -5,6 +5,7 @@ import { Providers } from './providers';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import PageTransitionWrapper from '@/components/layout/PageTransitionWrapper';
+import ChatWidget from '@/components/ai/ChatWidget';
 import { SITE_NAME, SITE_URL, AUTHOR_NAME } from '@/lib/constants';
 
 const inter = Inter({
@@ -67,6 +68,7 @@ export default function RootLayout({
             <PageTransitionWrapper>{children}</PageTransitionWrapper>
           </main>
           <Footer />
+          <ChatWidget />
         </Providers>
       </body>
     </html>
