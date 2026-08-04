@@ -1,4 +1,5 @@
 import type { Book, Chapter } from '@/types';
+import { SPIRITUAL_GIFTS_BOOK, SPIRITUAL_GIFTS_CHAPTERS } from './spiritual-gifts';
 
 export const STATIC_BOOKS: Book[] = [
   {
@@ -61,6 +62,7 @@ export const STATIC_BOOKS: Book[] = [
     averageRating: 0,
     totalReviews: 0,
   },
+  SPIRITUAL_GIFTS_BOOK,
 ];
 
 const MATH_CHAPTERS: Chapter[] = [
@@ -2678,5 +2680,6 @@ export function getStaticChapters(bookId: string): Chapter[] {
   if (bookId === 'lgcse-maths-workbook') return MATH_CHAPTERS;
   if (bookId === 'the-mystery-of-god') return MYSTERY_CHAPTERS;
   if (bookId === 'lgcse-accounting-workbook') return ACCOUNTING_CHAPTERS;
+  if (bookId === 'spiritual-gifts') return SPIRITUAL_GIFTS_CHAPTERS;
   return [];
 }

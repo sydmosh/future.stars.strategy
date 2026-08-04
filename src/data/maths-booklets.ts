@@ -1,7 +1,29 @@
 import type { Booklet } from './booklets';
 import { mathsBooklet3 } from './maths-booklets-3';
+import { mathsTutorial1 } from './maths-tutorial-1';
+import { mathsTutorial2 } from './maths-tutorial-2';
+import { mathsTutorial3 } from './maths-tutorial-3';
+import { mathsTutorial4 } from './maths-tutorial-4';
+import { mathsTutorial5 } from './maths-tutorial-5';
+import { mathsTutorial6 } from './maths-tutorial-6';
+import { mathsTutorial7 } from './maths-tutorial-7';
+import { mathsTutorial8 } from './maths-tutorial-8';
+import { mathsTutorial9 } from './maths-tutorial-9';
+import { mathsTutorial10 } from './maths-tutorial-10';
+import { mathsTutorial11 } from './maths-tutorial-11';
 
 export const mathsBooklets: Booklet[] = [
+  mathsTutorial1,
+  mathsTutorial2,
+  mathsTutorial3,
+  mathsTutorial4,
+  mathsTutorial5,
+  mathsTutorial6,
+  mathsTutorial7,
+  mathsTutorial8,
+  mathsTutorial9,
+  mathsTutorial10,
+  mathsTutorial11,
   {
     id: 'booklet-1',
     title: 'IGCSE Mathematics Practice Booklet 1',

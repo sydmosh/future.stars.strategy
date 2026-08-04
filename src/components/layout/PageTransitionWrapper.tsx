@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 import { useState, useEffect } from 'react';
 
@@ -22,18 +22,15 @@ export default function PageTransitionWrapper({ children }: { children: React.Re
   return (
     <>
       <LoadingSpinner visible={loading} />
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={pathname}
-          initial={{ x: 60, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: -60, opacity: 0 }}
-          transition={{ type: 'spring', stiffness: 260, damping: 28, duration: 0.35 }}
-          className="h-full"
-        >
-          {children}
-        </motion.div>
-      </AnimatePresence>
+      <motion.div
+        key={pathname}
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.2, ease: 'easeOut' }}
+        className="h-full"
+      >
+        {children}
+      </motion.div>
     </>
   );
 }

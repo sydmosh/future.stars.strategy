@@ -12,12 +12,19 @@ export interface Question {
   marks: number;
   solution: string;
   solutionSteps?: string[];
+  expectedAnswer?: string;
 }
 
 export interface Section {
   id: string;
   title: string;
   questions: Question[];
+}
+
+export interface RevisionSection {
+  heading: string;
+  content: string;
+  examples?: string[];
 }
 
 export interface Booklet {
@@ -27,6 +34,10 @@ export interface Booklet {
   description: string;
   totalMarks: number;
   sections: Section[];
+  revisionNotes?: {
+    title: string;
+    sections: RevisionSection[];
+  };
 }
 
 export interface Subject {

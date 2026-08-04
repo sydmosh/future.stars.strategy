@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="50%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#4c1d95"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0.9"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="1200" fill="url(#bg)"/>
+  <rect width="900" height="1200" fill="url(#halo)"/>
+
+  <rect x="0" y="0" width="36" height="1200" fill="#f59e0b"/>
+  <rect x="36" y="0" width="4" height="1200" fill="#fbbf24"/>
+
+  <circle cx="450" cy="420" r="170" fill="none" stroke="url(#glow)" stroke-width="3" opacity="0.85"/>
+  <circle cx="450" cy="420" r="150" fill="none" stroke="url(#glow)" stroke-width="1.5" opacity="0.55"/>
+  <circle cx="450" cy="420" r="70" fill="url(#glow)" opacity="0.18" filter="url(#soft)"/>
+
+  <g transform="translate(450, 420)" fill="none" stroke="#fbbf24" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 0 -78 C 0 -30, -30 0, 0 40" stroke-width="6" opacity="0.9"/>
+    <path d="M 0 -78 C 0 -30, 30 0, 0 40" stroke-width="6" opacity="0.9"/>
+    <path d="M 0 -78 C -12 -50, -12 -20, 0 4" stroke-width="5" opacity="0.5"/>
+    <path d="M 0 -78 C 12 -50, 12 -20, 0 4" stroke-width="5" opacity="0.5"/>
+  </g>
+  <circle cx="450" cy="342" r="14" fill="#fbbf24"/>
+
+  <text x="450" y="760" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="92" font-weight="bold" fill="#ffffff" letter-spacing="2">SPIRITUAL</text>
+  <text x="450" y="870" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="92" font-weight="bold" fill="#ffffff" letter-spacing="2">GIFTS</text>
+
+  <line x1="280" y1="925" x2="620" y2="925" stroke="#fbbf24" stroke-width="3"/>
+  <line x1="320" y1="935" x2="580" y2="935" stroke="#fbbf24" stroke-width="1.5"/>
+
+  <text x="450" y="995" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#e0e7ff" font-style="italic">The Gift from God to Make</text>
+  <text x="450" y="1045" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#e0e7ff" font-style="italic">the World a Better Place</text>
+
+  <text x="450" y="1130" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#c4b5fd" letter-spacing="3">MOSHOESHOE KOALI</text>
+</svg>
