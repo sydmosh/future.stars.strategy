@@ -108,4 +108,83 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
   }
+  /* ── Rich HTML Solution Blocks ──────────────────────────────────── */
+  .solution-html-block table {
+    @apply w-full border-collapse text-xs my-2;
+  }
+  .solution-html-block th {
+    @apply border border-emerald-300 dark:border-emerald-800 px-3 py-1.5
+           bg-emerald-100 dark:bg-emerald-900/50 font-bold text-emerald-900 dark:text-emerald-100 text-left;
+  }
+  .solution-html-block td {
+    @apply border border-emerald-200 dark:border-emerald-900/60 px-3 py-1.5
+           text-gray-800 dark:text-gray-200;
+  }
+  .solution-html-block tr:nth-child(even) td {
+    @apply bg-emerald-50/60 dark:bg-emerald-950/30;
+  }
+  .solution-html-block .sol-total td {
+    @apply bg-emerald-100 dark:bg-emerald-900/50 font-bold;
+  }
+  .solution-html-block .sol-highlight td {
+    @apply bg-amber-50 dark:bg-amber-900/30 font-semibold text-amber-900 dark:text-amber-200;
+  }
+  .solution-html-block .sol-formula {
+    @apply font-mono text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-950/40
+           px-2 py-0.5 rounded text-xs inline-block my-1;
+  }
+  .solution-html-block .sol-answer {
+    @apply font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-900/50
+           px-2 py-0.5 rounded text-xs inline-block my-1;
+  }
+  .solution-html-block .sol-section {
+    @apply font-bold text-gray-800 dark:text-gray-100 mt-2 mb-1 text-xs;
+  }
+  .solution-html-block p {
+    @apply text-xs leading-relaxed mb-1;
+  }
+  .solution-html-block .sol-chart {
+    @apply flex items-end gap-5 my-3 px-3 pt-2 pb-1 overflow-x-auto;
+  }
+  .solution-html-block .sol-bar {
+    @apply flex flex-col items-center gap-1 text-[10px] min-w-14;
+  }
+  .solution-html-block .sol-bar-fill {
+    @apply w-12 rounded-t-md;
+  }
+  .solution-html-block .sol-value {
+    @apply text-[10px] font-bold text-gray-700 dark:text-gray-200;
+  }
+  .solution-html-block .sol-label {
+    @apply text-[10px] text-gray-500 dark:text-gray-400 text-center max-w-20;
+  }
+  .solution-html-block .sol-caption {
+    @apply text-[10px] text-gray-500 dark:text-gray-400 italic mt-1;
+  }
+  .solution-html-block .sol-box {
+    @apply inline-block border border-emerald-300 dark:border-emerald-800 rounded-md px-2 py-1.5
+           bg-white dark:bg-gray-900 font-semibold text-[11px] text-gray-800 dark:text-gray-200;
+  }
+  .solution-html-block .sol-box-muted {
+    @apply inline-block border border-dashed border-gray-300 dark:border-gray-600 rounded-md px-2 py-1.5
+           bg-gray-50 dark:bg-gray-800 font-semibold text-[11px] text-gray-500 dark:text-gray-400;
+  }
+  .solution-html-block .sol-arrow {
+    @apply inline-block text-emerald-600 dark:text-emerald-400 font-bold text-sm px-1;
+  }
+  .solution-html-block .sol-flow {
+    @apply flex flex-wrap items-center gap-1.5 my-2;
+  }
+  .solution-html-block td.sol-dr {
+    @apply font-semibold text-emerald-700 dark:text-emerald-300;
+  }
+  .solution-html-block td.sol-cr {
+    @apply font-semibold text-sky-700 dark:text-sky-300;
+  }
+  .solution-html-block .sol-journal td:nth-child(2),
+  .solution-html-block .sol-journal td:nth-child(3),
+  .solution-html-block .sol-journal th:nth-child(2),
+  .solution-html-block .sol-journal th:nth-child(3) {
+    @apply text-center;
+  }
 }

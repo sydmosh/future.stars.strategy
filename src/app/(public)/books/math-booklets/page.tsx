@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   ArrowLeft,
   BookOpen,
@@ -12,6 +12,8 @@ import {
   Atom,
   GraduationCap,
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { subjects, type Subject, type Booklet } from '@/data/booklets';
@@ -39,15 +41,24 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 function SubjectCard({ subject }: { subject: Subject }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const INITIAL_VISIBLE_COUNT = 3;
+  const hasMore = subject.booklets.length > INITIAL_VISIBLE_COUNT;
+  const hiddenCount = subject.booklets.length - INITIAL_VISIBLE_COUNT;
+
   const totalQuestions = subject.booklets.reduce(
     (sum, b) => sum + b.sections.reduce((s, sec) => s + sec.questions.length, 0),
     0
   );
   const totalMarks = subject.booklets.reduce((sum, b) => sum + b.totalMarks, 0);
 
+  const visibleBooklets = isExpanded || !hasMore
+    ? subject.booklets
+    : subject.booklets.slice(0, INITIAL_VISIBLE_COUNT);
+
   return (
     <motion.div variants={itemVariants}>
-      <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-900">
+      <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md dark:border-gray-700 dark:bg-gray-900">
         <div className={cn('relative overflow-hidden p-8', 'bg-gradient-to-br', subject.gradient)}>
           <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10 blur-2xl" />
           <div className="absolute -bottom-8 -left-8 h-24 w-24 rounded-full bg-white/10 blur-2xl" />
@@ -73,11 +84,40 @@ function SubjectCard({ subject }: { subject: Subject }) {
             </Badge>
           </div>
 
-          <div className="space-y-3">
-            {subject.booklets.map((booklet) => (
-              <BookletRow key={booklet.id} booklet={booklet} subject={subject} />
-            ))}
+          <div className="space-y-3 overflow-hidden">
+            <AnimatePresence initial={false}>
+              {visibleBooklets.map((booklet) => (
+                <motion.div
+                  key={booklet.id}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <BookletRow booklet={booklet} subject={subject} />
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
+
+          {hasMore && (
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl border border-dashed border-indigo-200 bg-indigo-50/40 py-3 text-sm font-semibold text-indigo-600 transition-all hover:border-indigo-400 hover:bg-indigo-100/60 hover:shadow-sm dark:border-indigo-800/60 dark:bg-indigo-950/30 dark:text-indigo-400 dark:hover:border-indigo-600 dark:hover:bg-indigo-900/40"
+            >
+              {isExpanded ? (
+                <>
+                  <span>Show fewer booklets</span>
+                  <ChevronUp className="h-4 w-4" />
+                </>
+              ) : (
+                <>
+                  <span>Show {hiddenCount} more {hiddenCount === 1 ? 'booklet' : 'booklets'}</span>
+                  <ChevronDown className="h-4 w-4" />
+                </>
+              )}
+            </button>
+          )}
         </div>
       </div>
     </motion.div>

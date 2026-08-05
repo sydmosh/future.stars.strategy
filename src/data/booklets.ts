@@ -1,6 +1,7 @@
 import { mathsBooklets } from './maths-booklets';
 import { biologyBooklets } from './biology-booklets';
 import { accountingBooklets } from './accounting-booklets';
+import { accountingTutorials } from './accounting-tutorials';
 import { physicsBooklets } from './physics-booklets';
 
 export interface Question {
@@ -76,7 +77,7 @@ export const subjects: Subject[] = [
     description: 'LGCSE Accounting practice booklets covering the accounting equation, double entry, and financial statements.',
     icon: 'Landmark',
     gradient: 'from-amber-500 to-orange-600',
-    booklets: accountingBooklets,
+    booklets: [...accountingTutorials, ...accountingBooklets],
   },
   {
     id: 'physics',

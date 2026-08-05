@@ -255,13 +255,21 @@ function QuestionCard({
                       Step-by-Step Breakdown:
                     </span>
                   </div>
-                  <div className="space-y-1.5 font-mono text-xs text-gray-700 dark:text-gray-300">
-                    {question.solutionSteps.map((step, i) => (
-                      <div key={i} className="flex items-start gap-2 bg-white/50 dark:bg-black/10 px-2.5 py-1 rounded-md">
-                        <span className="shrink-0 text-gray-400 font-bold">{i + 1}.</span>
-                        <span className="whitespace-pre-wrap">{step}</span>
-                      </div>
-                    ))}
+                  <div className="space-y-1.5 text-xs text-gray-700 dark:text-gray-300">
+                    {question.solutionSteps.map((step, i) =>
+                      step.startsWith('<') ? (
+                        <div
+                          key={i}
+                          className="solution-html-block bg-white/60 dark:bg-black/10 px-2.5 py-2 rounded-md overflow-x-auto"
+                          dangerouslySetInnerHTML={{ __html: step }}
+                        />
+                      ) : (
+                        <div key={i} className="flex items-start gap-2 bg-white/50 dark:bg-black/10 px-2.5 py-1 rounded-md font-mono">
+                          <span className="shrink-0 text-gray-400 font-bold">{i + 1}.</span>
+                          <span className="whitespace-pre-wrap">{step}</span>
+                        </div>
+                      )
+                    )}
                   </div>
                 </div>
               )}
