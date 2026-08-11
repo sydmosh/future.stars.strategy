@@ -1,112 +1,124 @@
-# Future Stars Academy — Investment Proposal
+# Books.MoshoeshoeKoali.com
 
-**Building Africa's Next Generation of Innovators**
+A modern, production-quality online book publishing and reading platform built with Next.js 15 and Firebase.
 
----
+## Tech Stack
 
-## Document Overview
+- **Frontend**: Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS, shadcn/ui, Framer Motion
+- **Backend**: Firebase (Authentication, Cloud Firestore, Storage)
+- **Deployment**: Vercel (Free Plan)
 
-This investment-grade proposal is structured as a comprehensive, professional document suitable for submission to:
+## Features
 
-- **Government:** BEDCO, LNDC, Ministry of Education
-- **Development Partners:** UNDP, UNICEF, GIZ, World Bank, AfDB
-- **Financial Institutions:** Commercial banks, impact investors
-- **Corporate Partners:** CSR programmes, technology companies
-- **Angel Investors & Private Donors**
+- 📚 **Beautiful Reading Experience** - Chapter-by-chapter reading with adjustable typography, dark mode, progress tracking
+- 👑 **Author Platform** - Publish books without PDFs using the rich admin panel
+- 🔍 **Full-text Search** - Search across books, chapters, and tags
+- ⭐ **Reviews & Ratings** - 5-star rating system with written reviews
+- 🔖 **Bookmarks** - Bookmark books, chapters, and specific reading positions
+- 📊 **Reading Analytics** - Track reading streaks, progress, and statistics
+- 🎨 **Modern Design** - Apple-level quality with smooth animations and responsive layout
+- 🌙 **Dark Mode** - Full dark mode support
+- 🔒 **Authentication** - Email/password with role-based access (Admin/Reader)
 
----
+## Getting Started
 
-## Document Structure
+### Prerequisites
+
+- Node.js 18+
+- A Firebase project
+
+### Firebase Setup
+
+1. Create a Firebase project at [console.firebase.google.com](https://console.firebase.google.com)
+2. Enable **Authentication** (Email/Password)
+3. Create a **Cloud Firestore** database
+4. Enable **Firebase Storage**
+5. Copy your Firebase config from Project Settings > General > Your apps > Web app
+
+### Environment Variables
+
+```bash
+cp .env.local.example .env.local
+```
+
+Fill in your Firebase configuration:
+
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
+```
+
+### Create Admin User
+
+1. Register a user through the app at `/register`
+2. In Firebase Console, go to Firestore > `users` collection
+3. Find your user document and set `role` field to `"admin"`
+
+### Install & Run
+
+```bash
+npm install
+npm run dev
+```
+
+### Firestore Security Rules
+
+Deploy the rules from `firestore.rules` to your Firebase project.
+
+## Deployment to Vercel
+
+1. Push to GitHub
+2. Import repo in Vercel
+3. Add environment variables
+4. Deploy!
+
+No paid services required. The free tier handles everything.
+
+## Project Structure
 
 ```
-future stars proposal/
-├── FUTURE_STARS_PROPOSAL.md          # Full proposal (sections 1-16)
-├── README.md                         # This file
-├── assets/                           # For images, diagrams (future)
-└── appendices/
-    ├── APPENDIX_A_FOUNDER_PROFILE.md
-    ├── APPENDIX_B_BUSINESS_MODEL_CANVAS.md
-    ├── APPENDIX_C_SWOT_ANALYSIS.md
-    ├── APPENDIX_D_FINANCIAL_PROJECTIONS.md
-    ├── APPENDIX_E_STARTUP_BUDGET.md
-    ├── APPENDIX_F_ASSET_REGISTER.md
-    ├── APPENDIX_G_RISK_MANAGEMENT_PLAN.md
-    ├── APPENDIX_H_MARKETING_STRATEGY.md
-    ├── APPENDIX_I_OPERATIONAL_PLAN.md
-    ├── APPENDIX_J_MONITORING_EVALUATION.md
-    ├── APPENDIX_K_24_MONTH_GANTT.md
-    ├── APPENDIX_L_ORGANIZATIONAL_STRUCTURE.md
-    ├── APPENDIX_M_CURRICULUM_FRAMEWORK.md
-    ├── APPENDIX_N_INNOVATION_PASSPORT.md
-    ├── APPENDIX_O_FIVE_YEAR_ROADMAP.md
-    └── APPENDIX_P_STAKEHOLDER_ECOSYSTEM.md
+src/
+├── app/
+│   ├── (auth)/          # Login, Register
+│   ├── (public)/        # Home, Books, Categories, Search, About, Contact
+│   ├── admin/           # Dashboard, Books CRUD, Categories, Settings
+│   ├── read/            # Chapter-by-chapter reading
+│   └── profile/         # User profile
+├── components/
+│   ├── ui/              # shadcn/ui components
+│   ├── layout/          # Header, Footer
+│   └── ...              # Feature components
+├── contexts/            # Auth, Theme contexts
+├── hooks/               # Custom hooks
+├── lib/                 # Firebase config, utilities
+└── types/               # TypeScript interfaces
 ```
 
----
+## Architecture
 
-## How to Use This Proposal
+The platform uses a clean architecture with:
+- Server Components for static content
+- Client Components for interactivity
+- Firebase for all backend services
+- Context API for state management
+- Custom hooks for reusable logic
 
-### Viewing
+## Future-Ready
 
-The document is written in **Markdown with Mermaid diagrams**. To view the diagrams:
+Architecture supports:
+- Audiobooks
+- Paid books / Subscriptions
+- Multiple authors
+- AI summaries & Q&A
+- Translations
+- Offline reading
+- Mobile app
 
-1. **GitHub / GitLab** — Mermaid renders automatically
-2. **VS Code** — Install the "Markdown Preview Mermaid Support" extension
-3. **Mermaid Live Editor** — Copy individual diagram blocks to https://mermaid.live
-4. **PDF Export** — Use tools like `pandoc`, Markdown PDF, or Typora to export with rendered diagrams
+## License
 
-### Customization Needed
-
-Before submission, update the following placeholders:
-
-| Item | Location | Action |
-|------|----------|--------|
-| Founder Contact | Main proposal | Add email, phone |
-| Legal Structure | Section 2 | Complete registration details |
-| Founder Profile | Appendix A | Add full bio, photo, credentials |
-| Business Registration | Appendix A | Attach registration documents |
-| Partnership Letters | Appendix P | Add LOIs/LoP when available |
-| Photographs | Throughout | Add asset photos, facility images |
-| Pricing | Section 4 | Confirm with market testing |
-
-### Printing
-
-The complete proposal is designed to be approximately **80-100 pages** when printed with diagrams, suitable for formal submission.
-
----
-
-## Key Metrics at a Glance
-
-| Metric | Value |
-|--------|-------|
-| **Funding Request** | M300,000 |
-| **Founder Contribution** | M230,500 |
-| **Total Project Value** | M530,500 |
-| **Year 1 Learners** | 40 |
-| **Year 1 Revenue** | M691,000 |
-| **Year 3 Revenue** | M2,400,000 |
-| **Breakeven** | Month 8 |
-| **3-Year Learner Target** | 270+ |
-| **Student Businesses** | 30+ by Year 3 |
-
----
-
-## Contact
-
-**Future Stars Academy**
-Maseru, Lesotho
-**Founders:** Moshoeshoe Koali & Halieo Matsepe
-
-*This proposal is confidential and intended for the recipient only.*
-
----
-
-## Next Steps
-
-1. Review the main proposal: [`FUTURE_STARS_PROPOSAL.md`](FUTURE_STARS_PROPOSAL.md)
-2. Explore appendices for detailed supporting information
-3. Contact the founder for presentation or site visit
-
----
-
-*"Learn. Build. Innovate. Impact."*
+All rights reserved. &copy; Moshoeshoe Koali
