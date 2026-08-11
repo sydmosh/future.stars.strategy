@@ -31,6 +31,8 @@ interface PaperItem {
   variant: string;
   local?: boolean;
   msId?: string;
+  /** Local file name served from /maths (defaults to `${id}.pdf`). Set to an .html file to render HTML papers. */
+  file?: string;
 }
 
 interface PaperSet {
@@ -51,6 +53,21 @@ const paperSets: PaperSet[] = [
     papers: [
       { id: '0580_m25_qp_12', label: 'Paper 1 (Core) - Question Paper', variant: '12', local: true, msId: '0580_m25_ms_12' },
       { id: '0580_m25_ms_12', label: 'Paper 1 (Core) - Mark Scheme', variant: '12', local: true },
+    ],
+  },
+  {
+    series: 'ecol-lgcse',
+    label: '📘 ECoL LGCSE Question Papers',
+    year: '2024',
+    local: true,
+    papers: [
+      {
+        id: 'lgcse-0178-03-24-qp',
+        label: 'Mathematics Paper 3 (Core) - Question Paper',
+        variant: '3',
+        local: true,
+        file: 'lgcse-0178-03-24-qp.html',
+      },
     ],
   },
   {
@@ -153,14 +170,16 @@ export default function MathsPage() {
     set.papers.some(p => p.id === selectedPaper)
   ) || paperSets[1];
   const isLocal = selectedSet?.local || selectedPaperData?.local;
+  const fileName = selectedPaperData?.file ?? `${selectedPaper}.pdf`;
+  const isHtml = fileName.toLowerCase().endsWith('.html');
   const pdfUrl = isLocal
-    ? `/maths/${selectedPaper}.pdf`
+    ? `/maths/${fileName}`
     : `/api/maths-pdf?url=${encodeURIComponent(`${BASE_URL}/${selectedSet.series}/${selectedPaper}.pdf`)}`;
   const lumiexamsUrl = selectedSet.lumiexamsSlug
     ? `https://lumiexams.com/igcse/mathematics-0580/${selectedSet.year}/${selectedSet.lumiexamsSlug}/`
     : null;
   const directPdfUrl = isLocal
-    ? `/maths/${selectedPaper}.pdf`
+    ? `/maths/${fileName}`
     : `${BASE_URL}/${selectedSet.series}/${selectedPaper}.pdf`;
 
   return (
@@ -261,7 +280,7 @@ export default function MathsPage() {
                   <div className="flex items-center gap-2">
                     <BookOpen className="h-4 w-4 text-purple-600 dark:text-purple-400" />
                     <span className="text-sm font-medium text-gray-900 dark:text-white">
-                      {selectedPaper}.pdf
+                      {fileName}
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -300,7 +319,7 @@ export default function MathsPage() {
                     </a>
                     <a
                       href={directPdfUrl}
-                      download={`${selectedPaper}.pdf`}
+                      download={fileName}
                     >
                       <Button size="sm" className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-500 hover:to-purple-500">
                         <Download className="mr-1.5 h-4 w-4" />
@@ -321,29 +340,41 @@ export default function MathsPage() {
             </div>
 
                 <div className="h-[85vh] w-full">
-                  <object
-                    data={pdfUrl}
-                    type="application/pdf"
-                    className="h-full w-full"
-                  >
-                    <p className="flex h-full items-center justify-center text-gray-500">
-                      PDF cannot be displayed inline.{' '}
-                      <a
-                        href={pdfUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="ml-1 text-blue-600 underline hover:text-blue-800"
-                      >
-                        Open PDF directly
-                      </a>
-                    </p>
-                  </object>
+                  {isHtml ? (
+                    <iframe
+                      src={pdfUrl}
+                      title={fileName}
+                      className="h-full w-full border-0"
+                    />
+                  ) : (
+                    <object
+                      data={pdfUrl}
+                      type="application/pdf"
+                      className="h-full w-full"
+                    >
+                      <p className="flex h-full items-center justify-center text-gray-500">
+                        PDF cannot be displayed inline.{' '}
+                        <a
+                          href={pdfUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="ml-1 text-blue-600 underline hover:text-blue-800"
+                        >
+                          Open PDF directly
+                        </a>
+                      </p>
+                    </object>
+                  )}
                 </div>
               </div>
 
               <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-900/20">
-                <p className="text-sm text-amber-800 dark:text-amber-200">
-                  {isLocal ? (
+<p className="text-sm text-amber-800 dark:text-amber-200">
+                  {isHtml ? (
+                    <>
+                      <strong>📖 Official ECoL LGCSE Question Paper:</strong> View or download the paper above. Use your browser&apos;s print option (Ctrl + P) to print a clean A4 copy for practice under exam conditions.
+                    </>
+                  ) : isLocal ? (
                     <>
                       <strong>📖 Study Mode:</strong> Work through the question paper, then click <strong>"View Solutions"</strong> to check your answers against the mark scheme.
                     </>
