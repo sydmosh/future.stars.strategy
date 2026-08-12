@@ -1,4 +1,8 @@
 import { mathsBooklets } from './maths-booklets';
+import { mathsPastPaper2024P3 } from './maths-past-paper-2024-p3';
+import { mathsPastPaper2024P1 } from './maths-past-paper-2024-p1';
+import { mathsPastPaper2025P1 } from './maths-past-paper-2025-p1';
+import { mathsPastPaper2025P3 } from './maths-past-paper-2025-p3';
 import { biologyBooklets } from './biology-booklets';
 import { accountingBooklets } from './accounting-booklets';
 import { accountingTutorials } from './accounting-tutorials';
@@ -77,7 +81,7 @@ export const subjects: Subject[] = [
     description: 'IGCSE Mathematics practice booklets covering algebra, geometry, number, and probability.',
     icon: 'Calculator',
     gradient: 'from-indigo-500 to-purple-600',
-    booklets: mathsBooklets,
+    booklets: [...mathsBooklets, { ...mathsPastPaper2024P1, type: 'past-paper' as const, year: 2024 }, { ...mathsPastPaper2025P1, type: 'past-paper' as const, year: 2025 }, { ...mathsPastPaper2024P3, type: 'past-paper' as const, year: 2024 }, { ...mathsPastPaper2025P3, type: 'past-paper' as const, year: 2025 }],
   },
   {
     id: 'biology',

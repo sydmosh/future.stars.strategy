@@ -45,6 +45,42 @@ interface PaperSet {
 }
 
 const paperSets: PaperSet[] = [
+{
+    series: 'ecol-lgcse',
+    label: '📘 ECoL LGCSE Question Papers',
+    year: '2024',
+    local: true,
+    papers: [
+      {
+        id: 'lgcse-0178-01-24-qp',
+        label: 'Mathematics Paper 1 (Core) - Question Paper',
+        variant: '1',
+        local: true,
+        file: 'lgcse-0178-01-24-qp.html',
+      },
+      {
+        id: 'lgcse-0178-01-25-qp',
+        label: 'Mathematics Paper 1 (Core) - Question Paper',
+        variant: '1',
+        local: true,
+        file: 'lgcse-0178-01-25-qp.html',
+      },
+      {
+        id: 'lgcse-0178-03-24-qp',
+        label: 'Mathematics Paper 3 (Core) - Question Paper',
+        variant: '3',
+        local: true,
+        file: 'lgcse-0178-03-24-qp.html',
+      },
+      {
+        id: 'lgcse-0178-03-25-qp',
+        label: 'Mathematics Paper 3 (Core) - Question Paper',
+        variant: '3',
+        local: true,
+        file: 'lgcse-0178-03-25-qp.html',
+      },
+    ],
+  },
   {
     series: 'booklets',
     label: '📘 Question Booklets',
@@ -53,21 +89,6 @@ const paperSets: PaperSet[] = [
     papers: [
       { id: '0580_m25_qp_12', label: 'Paper 1 (Core) - Question Paper', variant: '12', local: true, msId: '0580_m25_ms_12' },
       { id: '0580_m25_ms_12', label: 'Paper 1 (Core) - Mark Scheme', variant: '12', local: true },
-    ],
-  },
-  {
-    series: 'ecol-lgcse',
-    label: '📘 ECoL LGCSE Question Papers',
-    year: '2024',
-    local: true,
-    papers: [
-      {
-        id: 'lgcse-0178-03-24-qp',
-        label: 'Mathematics Paper 3 (Core) - Question Paper',
-        variant: '3',
-        local: true,
-        file: 'lgcse-0178-03-24-qp.html',
-      },
     ],
   },
   {
@@ -142,9 +163,10 @@ const paperSets: PaperSet[] = [
 
 export default function MathsPage() {
   const { isAdmin } = useAuth();
-  const [selectedPaper, setSelectedPaper] = useState('0580_m25_qp_12');
+  const [selectedPaper, setSelectedPaper] = useState('lgcse-0178-03-24-qp');
   const [searchQuery, setSearchQuery] = useState('');
-  const [expandedSeries, setExpandedSeries] = useState<Record<string, boolean>>({
+const [expandedSeries, setExpandedSeries] = useState<Record<string, boolean>>({
+    'ecol-lgcse': true,
     booklets: true,
   });
   const [solutionKey, setSolutionKey] = useState(0);
@@ -199,8 +221,8 @@ export default function MathsPage() {
             animate={{ opacity: 1, scale: 1 }}
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm text-white/90 backdrop-blur-sm"
           >
-            <GraduationCap className="h-4 w-4" />
-            IGCSE Mathematics 0580
+<GraduationCap className="h-4 w-4" />
+            IGCSE Mathematics 0580 &amp; ECoL LGCSE
           </motion.div>
           <motion.h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
             Maths Past Papers
